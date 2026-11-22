@@ -1,0 +1,474 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Karina Tray Studio 7.9</title><style>:root{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#30382f;background:#f5f3ef}*{box-sizing:border-box}body{margin:0}.shell{max-width:1160px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.eyebrow{font-size:11px;letter-spacing:2px;color:#68745d}h1{font-family:Georgia,serif;font-size:clamp(26px,4vw,39px);margin:6px 0 20px;font-weight:500}h2{font-size:19px;margin:0 0 16px}.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:16px}.tabs button{white-space:nowrap}.card{background:white;border:1px solid #e3e2da;border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:0 3px 14px #30382f08}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.field label{display:block;font-size:12px;color:#6b7169;margin-bottom:7px}input,select{width:100%;border:1px solid #d7dbd2;border-radius:11px;padding:11px;background:#fafaf8;font:inherit;min-width:0}button{border:0;border-radius:11px;background:#e8ebe3;color:#45543e;padding:11px 15px;font:inherit;cursor:pointer}button.primary{background:#58694d;color:white}button.active{background:#58694d;color:white}button:disabled{opacity:.5}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.muted{color:#777f74;font-size:13px;line-height:1.55}.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(270px,.7fr);gap:16px}.plan{position:relative;width:100%;aspect-ratio:387/480;background:#ebe9df;border:7px solid #899580;border-radius:5px;overflow:hidden;touch-action:manipulation}.cell{position:absolute;border:2px solid #a5ad9a;background:#f0eee7;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;font-size:12px;color:#55614f;cursor:pointer;overflow:hidden}.divider-handle{position:absolute;z-index:15;background:#58694d;border:2px solid white;border-radius:12px;box-shadow:0 2px 9px #25321b55;touch-action:none;cursor:grab;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;user-select:none}.divider-handle:active{background:#354b30;cursor:grabbing}.cell.selected{outline:3px solid #566e47;outline-offset:-4px;background:#e8eddf}.roll{position:absolute;background:repeating-linear-gradient(90deg,#c8b59f 0,#c8b59f 8px,#e1d3c2 8px,#e1d3c2 10px);inset:5px;border-radius:4px;opacity:.85}.roll.vertical{background:repeating-linear-gradient(0deg,#c8b59f 0,#c8b59f 8px,#e1d3c2 8px,#e1d3c2 10px)}.cell .txt{z-index:1;background:#ffffffb9;padding:2px 5px;border-radius:5px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{padding:12px;border-radius:12px;background:#f4f5f0}.stat b{display:block;font-size:19px}.stat span{font-size:11px;color:#747e6e}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;border-bottom:1px solid #e5e7df;padding:10px 5px}th{color:#717a6d;font-weight:500} .hidden{display:none!important}.notice{padding:12px;border-radius:10px;background:#f2f3ed;font-size:13px;line-height:1.5}.row{display:flex;align-items:center;justify-content:space-between;gap:8px}.pill{font-size:12px;background:#e6eadd;padding:7px 10px;border-radius:20px}.costrow{display:grid;grid-template-columns:1fr 120px;gap:12px;align-items:center;margin:10px 0}.big{font-size:27px;font-weight:650}.warn{color:#a05031}.printonly{display:none}@media(max-width:760px){.shell{padding:13px}.layout{grid-template-columns:1fr}.card{padding:15px}.three{grid-template-columns:repeat(2,minmax(0,1fr))}.tabs button{font-size:13px}}@media print{body{background:white}.shell{max-width:none}.tabs,.noprint,button{display:none!important}.hidden.printshow{display:block!important}.card{break-inside:avoid;box-shadow:none}.layout{grid-template-columns:1fr 1fr}.printonly{display:block}}
+@media print{body.production-print .shell>*:not(#printSheet){display:none!important}body.production-print #printSheet{display:block!important;position:static!important;padding:0!important;margin:0!important}body.production-print .report-table{width:100%;border-collapse:collapse;font-size:10pt}body.production-print .report-table th,body.production-print .report-table td{border:1px solid #aaa;padding:5px;text-align:left}body.production-print .report-table thead{display:table-header-group}body.production-print .report-table tr{break-inside:avoid}body.production-print h2{margin-top:18px;break-after:avoid}body.production-print .report-warning{font-size:9pt;border-top:1px solid #aaa;padding-top:10px}body.production-print{background:white!important}}
+</style></head><body><div class="shell"><div class="top"><div><div class="eyebrow">МАСТЕРСКАЯ ОРГАНАЙЗЕРОВ · V8.0</div><h1>Karina Tray Studio</h1></div><span class="pill">Локальная версия</span></div><div id="jsStatus" style="padding:12px;margin:12px 0;background:#fff0d7;border-radius:10px;color:#634b27">⚠️ Интерактивные функции не запущены. Откройте файл в Safari или другом браузере, который разрешает JavaScript для локальных HTML-файлов.</div><nav class="tabs noprint"><button class="active" data-tab="project">Проект</button><button data-tab="plan">Планировка</button><button data-tab="details">Производство</button><button data-tab="cost">Стоимость</button><button data-tab="orders">Заказы</button></nav><section id="project"><div class="card"><h2>Параметры заказа</h2><div class="grid"><div class="field"><label>Клиент / название заказа</label><input id="name"></div><div class="field"><label>Ткань / цвет</label><input id="fabric"></div><div class="field"><label>Глубина ящика, мм</label><input id="drawerD" type="number" step="0.5"></div><div class="field"><label>Ширина ящика, мм</label><input id="drawerW" type="number" step="0.5"></div><div class="field"><label>Высота ящика, мм</label><input id="drawerH" type="number" step="0.5"></div><div class="field"><label>Высота готового органайзера, мм</label><input id="height" type="number" step="0.5"></div><div class="field"><label>Уменьшение глубины, всего мм</label><input id="clearD" type="number" step="0.5"></div><div class="field"><label>Уменьшение ширины, всего мм</label><input id="clearW" type="number" step="0.5"></div></div><div class="actions noprint"><button class="primary" onclick="tab('plan')">Перейти к планировке</button><button onclick="saveOrder()">Сохранить заказ</button><button onclick="exportJSON()">Скачать проект (.json)</button></div></div><div class="card"><h2>Размеры изделия</h2><p class="notice">Конструкция: дно МДФ 4 мм расположено внутри четырёх бортов, а не под ними. Высота наружных бортов = готовая высота − ткань сверху и снизу. Внутренние перегородки на 2 мм ниже бортов.</p><div id="dimensions" class="stats"></div><p class="muted">Габариты готового изделия включают ткань. Проверяйте фактическую толщину ткани и посадку на образце.</p></div></section><section id="plan" class="hidden"><div class="layout"><div class="card"><div class="row"><h2>Вид сверху</h2><span class="pill" id="cellcount"></span></div><div class="plan" id="planCanvas"></div><p class="muted">Нажмите на отделение, чтобы выбрать его. Затем разделите его вертикально или горизонтально. Для изменения размера задайте новую величину первой части. Для объединения используйте отмену последнего деления.</p></div><div><div class="card"><h2>Редактор отделения</h2><div id="selectedInfo" class="notice"></div><div class="field" style="margin-top:14px"><label>Размер первой части, мм (чистый)</label><input id="splitSize" type="number" step="0.5" value="100"></div><div class="notice" style="margin-top:12px">Чтобы изменить существующие ячейки, нажмите на зелёный маркер перегородки на схеме или перетащите его пальцем.</div><div class="field" style="margin-top:12px"><label>Выбранная перегородка</label><select id="dividerSelect" onchange="selectDivider(this.value)"></select></div><div id="dividerEditor" class="hidden"><div class="field" style="margin-top:10px"><label id="dividerLabel">Размер первой ячейки, мм</label><input id="dividerSize" type="number" step="0.5" min="1"></div><div class="actions"><button class="primary" onclick="applyDividerSize()">Изменить размер</button><button onclick="removeDivider()">Удалить перегородку</button></div><p class="muted">Изменение размера соседней ячейки происходит автоматически. Для сложных Т-образных стыков перемещение доступно, когда у перегородки совпадают соседние границы.</p></div><div class="actions"><button onclick="splitCell('v')">Разделить слева/справа</button><button onclick="splitCell('h')">Разделить сверху/снизу</button></div><div class="actions"><button onclick="undo()">Отменить деление</button><button onclick="resetLayout()">Пустой планшет</button></div></div><div class="card"><h2>Наполнение ячейки</h2><div class="field"><label>Тип</label><select id="insertType"><option value="none">Пустая</option><option value="rings">Валики для колец</option><option value="watch">Подушечка для часов</option><option value="necklace">Волны для цепочек</option><option value="glasses">Очки</option><option value="belt">Ремни / аксессуары</option></select></div><div class="grid" style="margin-top:12px"><div class="field"><label>Основа валика, Ø мм</label><input id="rollCore" type="number" value="15" step="0.5"></div><div class="field"><label>Ткань, мм / сторона</label><input id="rollFabric" type="number" value="2" step="0.1"></div></div><div class="field" style="margin-top:12px"><label>Направление валиков</label><select id="rollDir"><option value="vertical">Вдоль глубины</option><option value="horizontal">Вдоль ширины</option></select></div><div class="actions"><button class="primary" onclick="applyInsert()">Применить к ячейке</button></div><div id="rollInfo" class="notice"></div></div></div></div><div class="card noprint"><h2>Библиотека раскладок</h2><p class="muted">Шаблон заменяет текущую планировку после подтверждения.</p><div class="field"><label>Шаблон</label><select id="templateSelect"><option value="custom">Своя планировка</option><option value="two">Два отделения</option><option value="four">Четыре отделения</option><option value="grid">Сетка 3 × 4</option><option value="rings">Кольца + часы</option><option value="mixed">Смешанный органайзер</option></select></div><div class="actions"><button class="primary" onclick="applyTemplate()">Применить шаблон</button></div></div><div class="card"><h2>3D-предпросмотр · эскиз</h2><svg id="preview3D" viewBox="0 0 540 380" style="width:100%;max-height:360px;background:#f6f5f1;border-radius:14px" aria-label="Объёмный эскиз органайзера"></svg><p class="muted">Схематичная объёмная визуализация, не CAD-модель. Пропорции высоты и ткани условные.</p></div></section><section id="details" class="hidden"><div class="card"><h2>Конструкция</h2><div class="grid three"><div class="field"><label>Борта МДФ, мм</label><input id="borderT" type="number" value="6"></div><div class="field"><label>Перегородки МДФ, мм</label><input id="partitionT" type="number" value="4"></div><div class="field"><label>Дно МДФ, мм</label><input id="baseT" type="number" value="4"></div><div class="field"><label>Ткань на стороне, мм</label><input id="fabricT" type="number" value="2"></div><div class="field"><label>Накладки дна МДФ, мм</label><input id="overlayT" type="number" value="3"></div><div class="field"><label>Соединение</label><select id="joint"><option value="butt">Встык</option><option value="slot">Встречные прорези (проектный расчёт)</option></select></div><div class="field"><label>Перегородки ниже бортов, мм</label><input id="partitionDrop" type="number" min="0" step="0.5" value="2"></div><div class="field"><label>Зазор паза, мм</label><input id="slotClear" type="number" value="0.3" step="0.1"></div></div><div class="notice" style="margin-top:12px">Размеры ниже — предварительная деталировка. Расчёт не учитывает толщину клея, допуски станка, способ крепления и радиус фрезы. Для крестовых пересечений рассчитываются эскизные пазы; Т-стыки и технологические параметры требуют проверки. DXF содержит только прямоугольные контуры заготовок, без пазов, отверстий и компенсации фрезы; не запускайте его на станке без проверки технологом.</div></div><div class="card"><div class="row"><h2>Список деталей</h2><button class="noprint primary" onclick="exportCuttingCSV()">Файл для распила (.csv)</button><button class="noprint" onclick="exportDXF()">DXF · контуры заготовок</button></div><div style="overflow:auto"><table><thead><tr><th>Деталь</th><th>Размер, мм</th><th>Толщина</th><th>Шт.</th></tr></thead><tbody id="parts"></tbody></table></div></div><div class="card"><h2>Вставки и соединения</h2><div id="insertsList"></div><p class="notice">Перепад высоты перегородок: по умолчанию 2 мм ниже бортов по МДФ. Пазы строятся по уменьшенной высоте перегородки.</p><div id="slotsList"></div><div class="actions noprint"><button onclick="exportSlotCSV()">Скачать карту пазов CSV</button><button onclick="exportSlotDXF()">Скачать DXF с пазами</button></div></div><div class="actions noprint"><button onclick="exportCuttingCSV()">Скачать материалы для распила</button><button onclick="exportDXF()">Скачать DXF (эскиз заготовок)</button><button onclick="printSheet('production')">Печать / PDF производства</button><button onclick="printSheet('client')">Лист согласования / PDF</button></div><div class="card"><h2>Мягкие вставки и расход ткани</h2><div class="grid three"><div class="field"><label>Ширина рулона ткани, мм</label><input id="fabricWidth" type="number" min="100" value="1400" oninput="setExtra('fabricWidth',this.value)"></div><div class="field"><label>Припуск на обтяжку, мм</label><input id="fabricAllowance" type="number" min="0" value="15" oninput="setExtra('fabricAllowance',this.value)"></div><div class="field"><label>Отступ подушки часов, мм</label><input id="watchPadding" type="number" min="0" value="5" oninput="setExtra('watchPadding',this.value)"></div></div><div id="insertSummary"></div><div class="actions noprint"><button onclick="exportSoftCSV()">Скачать мягкие вставки (.csv)</button></div></div></section><section id="cost" class="hidden"><div class="card"><h2>Себестоимость и цена</h2><div id="costInputs"></div><div class="row"><span>Полная себестоимость</span><b id="totalCost" class="big"></b></div><div class="row"><span>Цена продажи</span><b id="sellPrice" class="big"></b></div><p class="muted">Наценка рассчитывается от себестоимости, включая стоимость твоего времени. Налоги и комиссии добавляй в расходы при необходимости.</p></div><div class="card"><h2>Стоимость наполнений</h2><p class="muted">Материалы за одну вставку / валик и время работы. Стоимость добавляется к общей себестоимости.</p><div style="overflow:auto"><table><thead><tr><th>Тип</th><th>Материалы за шт., ₽</th><th>Часов за шт.</th></tr></thead><tbody><tr><td>Валик для колец</td><td><input type="number" min="0" id="ip_rings" oninput="setInsertPrice('rings',this.value,'insertPrices')"></td><td><input type="number" min="0" step="0.05" id="ih_rings" oninput="setInsertPrice('rings',this.value,'insertHours')"></td></tr><tr><td>Подушка для часов</td><td><input type="number" min="0" id="ip_watch" oninput="setInsertPrice('watch',this.value,'insertPrices')"></td><td><input type="number" min="0" step="0.05" id="ih_watch" oninput="setInsertPrice('watch',this.value,'insertHours')"></td></tr><tr><td>Волны для цепочек</td><td><input type="number" min="0" id="ip_necklace" oninput="setInsertPrice('necklace',this.value,'insertPrices')"></td><td><input type="number" min="0" step="0.05" id="ih_necklace" oninput="setInsertPrice('necklace',this.value,'insertHours')"></td></tr><tr><td>Очки</td><td><input type="number" min="0" id="ip_glasses" oninput="setInsertPrice('glasses',this.value,'insertPrices')"></td><td><input type="number" min="0" step="0.05" id="ih_glasses" oninput="setInsertPrice('glasses',this.value,'insertHours')"></td></tr><tr><td>Ремни</td><td><input type="number" min="0" id="ip_belt" oninput="setInsertPrice('belt',this.value,'insertPrices')"></td><td><input type="number" min="0" step="0.05" id="ih_belt" oninput="setInsertPrice('belt',this.value,'insertHours')"></td></tr></tbody></table></div><p>Итого наполнения: <b id="insertCostTotal">0 ₽</b></p><button onclick="exportCostCSV()">Скачать стоимость наполнений (.csv)</button></div></section><section id="orders" class="hidden"><div class="card"><h2>Мои заказы</h2><div class="actions"><button class="primary" onclick="saveOrder()">Сохранить текущий</button><button onclick="newOrder()">Новый заказ</button><button onclick="exportJSON()">Скачать проект (.json)</button><button onclick="exportCuttingCSV()">Отдельный файл распила (.csv)</button><button onclick="exportDXF()">DXF заготовок</button><button onclick="document.getElementById('importFile').click()">Загрузить проект</button><input id="importFile" type="file" accept=".json,application/json" class="hidden" onchange="importJSON(event)"></div><p class="muted">Заказы сохраняются в памяти этого браузера. Для переноса на iPad или резервного копирования экспортируй JSON. Не удаляй данные браузера без резервной копии.</p><div id="ordersList"></div></div></section><div id="printSheet" class="printonly"></div></div><script>
+const $=id=>document.getElementById(id),deep=o=>JSON.parse(JSON.stringify(o)),key='karina-tray-v6-orders',fields=['name','fabric','drawerD','drawerW','drawerH','height','clearD','clearW','borderT','partitionT','baseT','fabricT','overlayT','joint','slotClear','partitionDrop'];let activeDivider=null,dragDivider=null;let state,history=[],selected='c1',currentTab='project',printMode='production';const defaults=()=>({name:'Заказ №001',fabric:'Молочный велюр',drawerD:483,drawerW:390,drawerH:35,height:45,clearD:3,clearW:3,borderT:6,partitionT:4,baseT:4,fabricT:2,overlayT:3,joint:'butt',slotClear:.3,partitionDrop:2,cells:[{id:'c1',x:0,y:0,w:1,h:1,insert:'none'}],cost:{mdf:550,cut:450,fabric:400,glue:120,pack:150,hours:3,rate:500,markup:40},version:1});const n=(v,def=0)=>Number.isFinite(+v)?+v:def;const fmt=v=>Number(v.toFixed(1)).toLocaleString('ru-RU');const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const dims=()=>({w:Math.max(0,n(state.drawerW)-n(state.clearW)),d:Math.max(0,n(state.drawerD)-n(state.clearD))});const inner=()=>({w:Math.max(0,dims().w-2*(n(state.borderT)+n(state.fabricT))),d:Math.max(0,dims().d-2*(n(state.borderT)+n(state.fabricT)))});const cellDim=c=>({w:c.w*inner().w,d:c.h*inner().d});function syncInputs(){fields.forEach(k=>$(k).value=state[k]??defaults()[k]);render()}function readInputs(){fields.forEach(k=>{let v=$(k).value;state[k]=['name','fabric','joint'].includes(k)?v:n(v)});render()}function tab(t){currentTab=t;document.querySelectorAll('section').forEach(s=>s.classList.toggle('hidden',s.id!==t));document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));render()}document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>tab(b.dataset.tab));function getCell(){return state.cells.find(c=>c.id===selected)||state.cells[0]}function splitCell(dir){const c=getCell(),v=n($('splitSize').value),sz=cellDim(c),axis=dir==='v'?'w':'d',available=sz[axis],fraction=v/available;if(!Number.isFinite(fraction)||fraction<=.05||fraction>=.95){alert('Введите размер первой части больше 5% и меньше 95% отделения.');return}history.push(deep(state.cells));const a=deep(c),b=deep(c);a.id='c'+Date.now()+'a';b.id='c'+Date.now()+'b';a.insert='none';b.insert='none';if(dir==='v'){a.w=c.w*fraction;b.x=c.x+a.w;b.w=c.w-a.w}else{a.h=c.h*fraction;b.y=c.y+a.h;b.h=c.h-a.h}state.cells=state.cells.filter(x=>x.id!==c.id).concat(a,b);selected=a.id;render()}function undo(){if(!history.length)return;activeDivider=null;state.cells=history.pop();selected=state.cells[0].id;render()}function resetLayout(){if(!confirm('Очистить текущую планировку?'))return;history.push(deep(state.cells));activeDivider=null;state.cells=[{id:'c1',x:0,y:0,w:1,h:1,insert:'none'}];selected='c1';render()}function editableDividers(){const cs=state.cells,eps=1e-6,out=[];for(let i=0;i<cs.length;i++)for(let j=i+1;j<cs.length;j++){let a=cs[i],b=cs[j];if(Math.abs(a.x+a.w-b.x)<eps||Math.abs(b.x+b.w-a.x)<eps){let left=a.x<b.x?a:b,right=left===a?b:a;if(Math.abs(left.y-right.y)<eps&&Math.abs(left.h-right.h)<eps){out.push({id:left.id+'|'+right.id+'|v',axis:'v',a:left.id,b:right.id,pos:right.x,start:left.x,end:right.x+right.w,y:left.y,h:left.h});}}if(Math.abs(a.y+a.h-b.y)<eps||Math.abs(b.y+b.h-a.y)<eps){let top=a.y<b.y?a:b,bottom=top===a?b:a;if(Math.abs(top.x-bottom.x)<eps&&Math.abs(top.w-bottom.w)<eps){out.push({id:top.id+'|'+bottom.id+'|h',axis:'h',a:top.id,b:bottom.id,pos:bottom.y,start:top.y,end:bottom.y+bottom.h,x:top.x,w:top.w});}}}return out;}
+function dividerSize(d){const a=state.cells.find(c=>c.id===d.a);return (d.pos-d.start)*(d.axis==='v'?inner().w:inner().d)}
+function selectDivider(id){activeDivider=editableDividers().find(d=>d.id===id)||null;renderPlan()}
+function moveDivider(d,newSize,commit=true){if(!d)return false;const a=state.cells.find(c=>c.id===d.a),b=state.cells.find(c=>c.id===d.b);if(!a||!b)return false;const total=(d.end-d.start)*(d.axis==='v'?inner().w:inner().d);if(!Number.isFinite(newSize)||newSize<10||newSize>total-10)return false;const pos=d.start+newSize/(d.axis==='v'?inner().w:inner().d);if(commit)history.push(deep(state.cells));if(d.axis==='v'){a.w=pos-a.x;b.w=b.x+b.w-pos;b.x=pos;}else{a.h=pos-a.y;b.h=b.y+b.h-pos;b.y=pos;}return true;}
+function applyDividerSize(){if(!activeDivider)return;const size=Number($('dividerSize').value);if(!moveDivider(activeDivider,size)){alert('Введите размер от 10 мм до размера двух ячеек минус 10 мм.');return}const id=activeDivider.id;activeDivider=editableDividers().find(d=>d.id===id)||null;render()}
+function removeDivider(){if(!activeDivider)return;const d=activeDivider,a=state.cells.find(c=>c.id===d.a),b=state.cells.find(c=>c.id===d.b);if(!a||!b)return;history.push(deep(state.cells));if(d.axis==='v')a.w+=b.w;else a.h+=b.h;state.cells=state.cells.filter(c=>c.id!==b.id);selected=a.id;activeDivider=null;render()}
+function renderDividerControls(p){const ds=editableDividers();if(activeDivider)activeDivider=ds.find(d=>d.id===activeDivider.id)||null;const select=$('dividerSelect');select.innerHTML='<option value="">Выберите перегородку</option>'+ds.map((d,i)=>'<option value="'+d.id+'">'+(d.axis==='v'?'Вертикальная':'Горизонтальная')+' №'+(i+1)+'</option>').join('');select.value=activeDivider?.id||'';$('dividerEditor').classList.toggle('hidden',!activeDivider);if(activeDivider){$('dividerLabel').textContent=(activeDivider.axis==='v'?'Ширина слева':'Глубина сверху')+', мм';if(document.activeElement!==$('dividerSize'))$('dividerSize').value=Number(dividerSize(activeDivider).toFixed(1));}ds.forEach(d=>{const h=document.createElement('div');h.className='divider-handle';h.title='Перетащите или нажмите для точного ввода';if(d.axis==='v'){h.style.cssText=`left:calc(${d.pos*100}% - 12px);top:${(d.y+d.h/2)*100}%;width:24px;height:42px;transform:translateY(-50%)`;}else{h.style.cssText=`left:${(d.x+d.w/2)*100}%;top:calc(${d.pos*100}% - 12px);width:42px;height:24px;transform:translateX(-50%)`;}h.textContent=d.axis==='v'?'↔':'↕';h.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();activeDivider=d;dragDivider={id:d.id,start:e.clientX,sy:e.clientY,initial:dividerSize(d),moved:false};h.setPointerCapture(e.pointerId);$('dividerSelect').value=d.id;$('dividerEditor').classList.remove('hidden');$('dividerSize').value=Number(dividerSize(d).toFixed(1));});h.addEventListener('pointermove',e=>{if(!dragDivider||dragDivider.id!==d.id)return;const rect=p.getBoundingClientRect(),delta=d.axis==='v'?(e.clientX-dragDivider.start)/rect.width*inner().w:(e.clientY-dragDivider.sy)/rect.height*inner().d;if(Math.abs(delta)>1)dragDivider.moved=true;const value=dragDivider.initial+delta;$('dividerSize').value=Number(value.toFixed(1));});h.addEventListener('pointerup',e=>{if(!dragDivider)return;const value=Number($('dividerSize').value),moved=dragDivider.moved;dragDivider=null;if(moved&&moveDivider(d,value)){activeDivider=editableDividers().find(x=>x.id===d.id)||null;render()}else renderPlan();});h.addEventListener('pointercancel',()=>{dragDivider=null;renderPlan()});p.appendChild(h);});}
+function rollData(c){const dim=cellDim(c),diam=n(c.core,15)+2*n(c.cover,2),across=c.dir==='horizontal'?dim.d:dim.w,along=c.dir==='horizontal'?dim.w:dim.d,count=diam>0?Math.floor((across+1e-8)/diam):0;return{diam,across,along,count,remain:across-count*diam}}function applyInsert(){const c=getCell();c.insert=$('insertType').value;c.core=Math.max(.1,n($('rollCore').value,15));c.cover=Math.max(0,n($('rollFabric').value,2));c.dir=$('rollDir').value;render()}function renderPlan(){const p=$('planCanvas');p.innerHTML='';state.cells.forEach(c=>{const el=document.createElement('div'),sz=cellDim(c);el.className='cell'+(c.id===selected?' selected':'');Object.assign(el.style,{left:c.x*100+'%',top:c.y*100+'%',width:c.w*100+'%',height:c.h*100+'%'});if(c.insert==='rings'){const r=document.createElement('div');r.className='roll'+(c.dir==='horizontal'?' vertical':'');el.appendChild(r)}if(c.insert==='watch'){const r=document.createElement('div');r.style.cssText='position:absolute;inset:22%;background:#c6b7a6;border-radius:35%;';el.appendChild(r)}const label=document.createElement('span');label.className='txt';label.textContent=fmt(sz.w)+' × '+fmt(sz.d)+(c.insert==='rings'?' · '+rollData(c).count+' вал.':c.insert==='watch'?' · часы':'');el.appendChild(label);el.onclick=()=>{selected=c.id;render()};p.appendChild(el)});renderDividerControls(p);$('cellcount').textContent=state.cells.length+' отс.';const c=getCell(),sz=cellDim(c);$('selectedInfo').textContent='Выбрано: '+fmt(sz.w)+' × '+fmt(sz.d)+' мм';$('insertType').value=c.insert||'none';$('rollCore').value=c.core??15;$('rollFabric').value=c.cover??2;$('rollDir').value=c.dir||'vertical';const r=rollData({...c,core:n($('rollCore').value,15),cover:n($('rollFabric').value,2),dir:$('rollDir').value});$('rollInfo').textContent=c.insert==='rings'?`Готовый Ø${fmt(r.diam)} мм · ${r.count} шт. по ${fmt(r.along)} мм · остаток ${fmt(r.remain)} мм`:'Выберите «Валики для колец» и нажмите «Применить».'}
+function partitionGeometry(){
+ const I=inner(),eps=1e-6,pt=n(state.partitionT),f=n(state.fabricT),ht=Math.max(0,n(state.height)-2*f);
+ const vertical=[],horizontal=[];
+ const uniq=(arr)=>[...new Set(arr.map(v=>Math.round(v*1e7)/1e7))].sort((a,b)=>a-b);
+ const xs=uniq(state.cells.flatMap(c=>[c.x,c.x+c.w]).filter(x=>x>eps&&x<1-eps));
+ const ys=uniq(state.cells.flatMap(c=>[c.y,c.y+c.h]).filter(y=>y>eps&&y<1-eps));
+ function merge(intervals){intervals.sort((a,b)=>a[0]-b[0]);let out=[];for(const [a,b] of intervals){if(b-a<eps)continue;let last=out[out.length-1];if(last&&a<=last[1]+eps)last[1]=Math.max(last[1],b);else out.push([a,b]);}return out;}
+ for(const x of xs){const ints=[];for(const c of state.cells){if(Math.abs(c.x-x)<eps||Math.abs(c.x+c.w-x)<eps)ints.push([c.y,c.y+c.h]);}for(const [a,b] of merge(ints))if(a>eps||b<1-eps||ints.length>1)vertical.push({axis:'V',pos:x,start:a,end:b});}
+ for(const y of ys){const ints=[];for(const c of state.cells){if(Math.abs(c.y-y)<eps||Math.abs(c.y+c.h-y)<eps)ints.push([c.x,c.x+c.w]);}for(const [a,b] of merge(ints))horizontal.push({axis:'H',pos:y,start:a,end:b});}
+ const parts=[...vertical,...horizontal].map((v,i)=>({...v,id:'П'+(i+1),length:(v.end-v.start)*(v.axis==='V'?I.d:I.w),thickness:pt,height:Math.max(0,ht-n(state.partitionDrop,2)),slots:[]}));
+ const issues=[];
+ for(const v of parts.filter(p=>p.axis==='V'))for(const h of parts.filter(p=>p.axis==='H')){
+  const x=v.pos,y=h.pos;
+  if(x>h.start+eps&&x<h.end-eps&&y>v.start+eps&&y<v.end-eps){
+   const vx=(y-v.start)*I.d,hx=(x-h.start)*I.w;
+   const slotW=pt+n(state.slotClear);
+   if(slotW<=0||ht<=0||slotW>=Math.min(v.length,h.length)){issues.push('Некорректный паз '+v.id+' / '+h.id);continue;}
+   v.slots.push({at:vx,width:slotW,depth:ht/2,from:'top',other:h.id});
+   h.slots.push({at:hx,width:slotW,depth:ht/2,from:'bottom',other:v.id});
+  }else if(x>=h.start-eps&&x<=h.end+eps&&y>=v.start-eps&&y<=v.end+eps){
+   issues.push('Т-стык '+v.id+' / '+h.id+': требуется ручная проверка соединения');
+  }
+ }
+ return {parts,issues,ht};
+}
+function partsData(){
+ // The height field is authoritative. Never use a stale cached height for cutting lists.
+ const heightInput=$('height');
+ if(heightInput && heightInput.value.trim()!=='' && Number.isFinite(Number(heightInput.value))) state.height=Number(heightInput.value);
+ const {w,d}=dims(),b=n(state.borderT),f=n(state.fabricT),bt=n(state.baseT),ht=Math.max(0,n(state.height)-2*f),rawW=Math.max(0,w-2*f),rawD=Math.max(0,d-2*f),baseW=Math.max(0,rawW-2*b),baseD=Math.max(0,rawD-2*b);
+ const rows=[['Дно',fmt(baseW)+' × '+fmt(baseD),bt,1],['Передний / задний борт',fmt(rawW)+' × '+fmt(ht),b,2],['Боковой борт',fmt(Math.max(0,rawD-2*b))+' × '+fmt(ht),b,2]];
+ for(const p of partitionGeometry().parts)rows.push([p.id+' · '+(p.axis==='V'?'вдоль глубины':'вдоль ширины'),fmt(p.length)+' × '+fmt(p.height),p.thickness,1]);
+ return rows;
+}
+function renderParts(){
+ const rows=partsData(),geo=partitionGeometry();
+ $('parts').innerHTML=rows.map(r=>'<tr>'+r.map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr>').join('');
+ let inserts=state.cells.filter(c=>c.insert!=='none');
+ $('insertsList').innerHTML=inserts.length?inserts.map(c=>{const sz=cellDim(c),r=rollData(c);return `<p>${c.insert==='rings'?`Кольца: ${r.count} валиков, Ø${fmt(r.diam)} мм, длина ${fmt(r.along)} мм`:`Часы: ячейка ${fmt(sz.w)} × ${fmt(sz.d)} мм (размер подушки уточнить)`}</p>`}).join(''):'<p class="muted">Вставки пока не добавлены.</p>';
+ $('slotsList').innerHTML=state.joint==='slot'?'<p><b>Карта встречных прорезей (только внутренние крестовые пересечения)</b></p>'+geo.parts.map(p=>`<p><b>${p.id}</b> · ${fmt(p.length)} × ${fmt(p.height)} мм: `+(p.slots.length?p.slots.map(z=>`паз к ${z.other}: центр ${fmt(z.at)} мм от начала детали, ширина ${fmt(z.width)} мм, глубина ${fmt(z.depth)} мм, ${z.from==='top'?'сверху':'снизу'}`).join('; '):'нет крестовых пазов')+'</p>').join('')+(geo.issues.length?'<p class="notice">'+geo.issues.map(esc).join('<br>')+'</p>':'')+'<p class="notice">Пазы рассчитаны только для крестовых пересечений. Т-стыки, обтяжка торцов, посадки в корпус, допуски и технологические радиусы требуют проверки.</p>':'';
+}
+const costLabels={mdf:'МДФ, ₽',cut:'Распил, ₽',fabric:'Ткань, ₽',glue:'Клей, ₽',pack:'Упаковка, ₽',hours:'Работа, часов',rate:'Стоимость часа, ₽',markup:'Наценка, %'};function renderCost(){if(!$('costInputs').children.length)$('costInputs').innerHTML=Object.keys(costLabels).map(k=>`<div class="costrow"><label for="cost_${k}">${costLabels[k]}</label><input id="cost_${k}" type="number" min="0" step="0.1"></div>`).join('');Object.keys(costLabels).forEach(k=>{const el=$('cost_'+k);if(document.activeElement!==el)el.value=state.cost[k];el.oninput=()=>{state.cost[k]=Math.max(0,n(el.value));renderCostTotals()}});renderCostTotals()}function renderCostTotals(){const c=state.cost,base=['mdf','cut','fabric','glue','pack'].reduce((s,k)=>s+n(c[k]),0)+n(c.hours)*n(c.rate);$('totalCost').textContent=fmt(base)+' ₽';$('sellPrice').textContent=fmt(base*(1+n(c.markup)/100))+' ₽'}function render(){const {w,d}=dims();$('dimensions').innerHTML=[['Глубина',d],['Ширина',w],['Высота',n(state.height)]].map(([k,v])=>`<div class="stat"><b>${fmt(v)}</b><span>${k}, мм</span></div>`).join('');renderPlan();renderParts();renderCost();renderOrders()}function orders(){try{return JSON.parse(localStorage.getItem(key)||'{}')}catch{return {}}}function saveOrder(){readInputs();let o=orders();o[state.name]={...deep(state),savedAt:new Date().toISOString()};try{localStorage.setItem(key,JSON.stringify(o));alert('Заказ сохранён в этом браузере. Для резервной копии экспортируйте JSON.')}catch(e){alert('Не удалось сохранить: '+e.message)}renderOrders()}function renderOrders(){const o=orders();$('ordersList').innerHTML=Object.keys(o).length?Object.keys(o).map((k,i)=>`<div class="row" style="border-bottom:1px solid #e3e6df;padding:10px 0"><div><b>${esc(k)}</b><div class="muted">Версия ${esc(o[k].version||1)} · ${esc((o[k].savedAt||'').slice(0,10))}</div></div><div class="actions"><button onclick="loadOrder(${i})">Открыть</button><button onclick="deleteOrder(${i})">Удалить</button></div></div>`).join(''):'<p class="muted">Сохранённых заказов пока нет.</p>'}function loadOrder(i){const o=orders(),k=Object.keys(o)[i];if(!k)return;state={...defaults(),...deep(o[k])};selected=state.cells[0].id;history=[];syncInputs();tab('project')}function deleteOrder(i){let o=orders(),k=Object.keys(o)[i];if(!k||!confirm('Удалить '+k+'?'))return;delete o[k];localStorage.setItem(key,JSON.stringify(o));renderOrders()}function newOrder(){state=defaults();state.name='Новый заказ';selected='c1';history=[];syncInputs();tab('project')}function download(name,data,mime){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([data],{type:mime}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}function exportJSON(){readInputs();download('karina-tray-'+state.name.replace(/[^\wа-яё-]/gi,'_')+'.json',JSON.stringify({app:'Karina Tray Studio',schema:6,project:state},null,2),'application/json')}function importJSON(e){const f=e.target.files[0];if(!f)return;f.text().then(t=>{let data=JSON.parse(t);if(data.app!=='Karina Tray Studio'||data.schema!==6||!data.project||!Array.isArray(data.project.cells))throw Error('Неподдерживаемый формат');state={...defaults(),...data.project};selected=state.cells[0]?.id||'c1';history=[];syncInputs();tab('project');alert('Проект загружен. Не забудьте сохранить заказ.');}).catch(err=>alert('Ошибка загрузки: '+err.message));e.target.value=''}function exportCSV(){let rows=[['Деталь','Размер мм','Толщина мм','Количество'],...partsData()];download('detali-karina-tray.csv','\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n'),'text/csv;charset=utf-8')}function exportCuttingCSV(){readInputs();const safe=state.name.replace(/[^\wа-яё-]/gi,'_');const rows=[['ПРЕДВАРИТЕЛЬНАЯ ВЕДОМОСТЬ РАСПИЛА — НЕ ЗАДАНИЕ ДЛЯ СТАНКА'],['Заказ',state.name],['Версия',state.version],['Ткань',state.fabric],['Готовый размер, глубина × ширина × высота, мм',fmt(dims().d)+' × '+fmt(dims().w)+' × '+fmt(n(state.height))],['Соединение',state.joint==='slot'?'Встречные прорези — карта пазов НЕ рассчитана':'Встык'],['Перепад высоты перегородок относительно бортов, мм',fmt(n(state.partitionDrop,2))],['ВНИМАНИЕ','Перед распилом проверить размеры, дубли перегородок, стыки и допуски'],[],['№','Деталь','Размер заготовки, мм','МДФ толщина, мм','Количество, шт','Примечание']];partsData().forEach((r,i)=>rows.push([i+1,...r,'Проверить по чертежу перед заказом']));rows.push([],['ВСТАВКИ — НЕ МДФ']);state.cells.forEach((c,i)=>{if(c.insert==='rings'){const r=rollData(c);rows.push(['Ячейка '+(i+1),'Валики для колец','Длина '+fmt(r.along)+' мм','Основа Ø'+fmt(n(c.core,15))+' мм',r.count,'Готовый Ø'+fmt(r.diam)+' мм, ткань '+fmt(n(c.cover,2))+' мм/сторона'])}else if(c.insert==='watch'){const d=cellDim(c);rows.push(['Ячейка '+(i+1),'Подушка для часов',fmt(d.w)+' × '+fmt(d.d)+' мм','','1','Размер подушки уточнить'])}});const csv='\ufeff'+rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');download('raspil-'+safe+'.csv',csv,'text/csv;charset=utf-8')}function exportDXF(){
+ readInputs();
+ const parts=partsData();
+ const items=[];
+ for(let i=0;i<parts.length;i++){
+  const [label,size,thickness,qty]=parts[i];
+  const match=String(size).replace(/,/g,'.').match(/^\s*(\d+(?:\.\d+)?)\s*[×xX]\s*(\d+(?:\.\d+)?)/);
+  if(!match){alert('Невозможно распознать размер детали: '+label);return;}
+  const a=Number(match[1]),b=Number(match[2]),q=Number(qty),t=Number(thickness);
+  if(!Number.isFinite(a)||!Number.isFinite(b)||!Number.isFinite(t)||a<=0||b<=0||q<1||q>500){alert('Некорректные размеры/количество деталей');return;}
+  for(let j=0;j<q;j++)items.push({label:label+' '+(j+1)+'/'+q,a,b,t});
+ }
+ if(items.length>1000){alert('Слишком много деталей для экспорта');return;}
+ const out=['0','SECTION','2','HEADER','9','$ACADVER','1','AC1009','9','$INSUNITS','70','4','0','ENDSEC','0','SECTION','2','ENTITIES'];
+ const entity=(type,layer,fields)=>{out.push('0',type,'8',layer,...fields.map(([k,v])=>[String(k),String(v)]).flat())};
+ const line=(x1,y1,x2,y2,layer)=>entity('LINE',layer,[[10,x1],[20,y1],[30,0],[11,x2],[21,y2],[31,0]]);
+ const txt=(x,y,label,height=5)=>entity('TEXT','LABELS',[[10,x],[20,y],[30,0],[40,height],[1,label.replace(/[^\x20-\x7E]/g,' ').slice(0,100)]]);
+ let x=0,y=0,rowH=0;const maxRow=1500,gap=25;
+ items.forEach((it,i)=>{
+  if(x+it.a>maxRow&&x>0){x=0;y+=rowH+gap;rowH=0;}
+  const layer='MDF_'+String(it.t).replace('.','_')+'MM';
+  line(x,y,x+it.a,y,layer);line(x+it.a,y,x+it.a,y+it.b,layer);line(x+it.a,y+it.b,x,y+it.b,layer);line(x,y+it.b,x,y,layer);
+  txt(x+2,y+Math.min(it.b/2,12),'P'+(i+1)+' '+it.a+'x'+it.b+' T'+it.t,Math.min(5,Math.max(2,it.b/5)));
+  x+=it.a+gap;rowH=Math.max(rowH,it.b);
+ });
+ out.push('0','ENDSEC','0','EOF');
+ const safe=state.name.replace(/[^\wа-яё-]/gi,'_');
+ download('eskiz-zagotovok-'+safe+'.dxf',out.join('\n')+'\n','application/dxf');
+ alert('DXF создан: '+items.length+' прямоугольных заготовок. Это НЕ управляющая программа ЧПУ: отсутствуют пазы, отверстия, раскладка по листам и компенсация инструмента. Перед производством обязательна проверка.');
+}
+function exportSlotCSV(){
+ readInputs();const g=partitionGeometry();
+ const rows=[['ПРЕДВАРИТЕЛЬНАЯ КАРТА ПАЗОВ — ПРОВЕРИТЬ ПЕРЕД ПРОИЗВОДСТВОМ'],['Заказ',state.name],['№ детали','Длина мм','Высота мм','Сторона паза','Центр от начала мм','Ширина мм','Глубина мм','Ответная деталь']];
+ for(const p of g.parts){if(!p.slots.length)rows.push([p.id,fmt(p.length),fmt(p.height),'нет','','','','']);for(const z of p.slots)rows.push([p.id,fmt(p.length),fmt(p.height),z.from==='top'?'сверху':'снизу',fmt(z.at),fmt(z.width),fmt(z.depth),z.other]);}
+ for(const issue of g.issues)rows.push(['ПРОВЕРИТЬ',issue]);
+ download('pazy-'+state.name.replace(/[^\wа-яё-]/gi,'_')+'.csv','\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n'),'text/csv;charset=utf-8');
+}
+function exportSlotDXF(){
+ readInputs();if(state.joint!=='slot'){alert('Выберите соединение «Встречные прорези».');return;}
+ const g=partitionGeometry();
+ if(g.issues.length){alert('Обнаружены Т-стыки или проблемы с пазами. Экспорт схемы возможен, но требуется ручная проверка: '+g.issues.join('; '));}
+ const out=['0','SECTION','2','HEADER','9','$ACADVER','1','AC1009','9','$INSUNITS','70','4','0','ENDSEC','0','SECTION','2','ENTITIES'];
+ const line=(x,y,X,Y,layer)=>out.push('0','LINE','8',layer,'10',String(x),'20',String(y),'30','0','11',String(X),'21',String(Y),'31','0');
+ const rect=(x,y,w,h,layer)=>{line(x,y,x+w,y,layer);line(x+w,y,x+w,y+h,layer);line(x+w,y+h,x,y+h,layer);line(x,y+h,x,y,layer)};
+ let offset=0;
+ for(const p of g.parts){
+  const H=p.height,L=p.length;
+  // Closed boundary walk along top and bottom with notches.
+  const top=p.slots.filter(z=>z.from==='top').sort((a,b)=>a.at-b.at),bottom=p.slots.filter(z=>z.from==='bottom').sort((a,b)=>a.at-b.at);
+  const points=[[0,0]];
+  for(const z of bottom){const a=z.at-z.width/2,b=z.at+z.width/2;if(a<0||b>L)continue;points.push([a,0],[a,z.depth],[b,z.depth],[b,0]);}
+  points.push([L,0],[L,H]);
+  for(const z of [...top].reverse()){const a=z.at-z.width/2,b=z.at+z.width/2;if(a<0||b>L)continue;points.push([b,H],[b,H-z.depth],[a,H-z.depth],[a,H]);}
+  points.push([0,H],[0,0]);
+  for(let i=0;i<points.length-1;i++)line(offset+points[i][0],points[i][1],offset+points[i+1][0],points[i+1][1],'PARTITIONS_SLOTS');
+  offset+=L+30;
+ }
+ out.push('0','ENDSEC','0','EOF');
+ download('pazy-eskiz-'+state.name.replace(/[^\wа-яё-]/gi,'_')+'.dxf',out.join('\n')+'\n','application/dxf');
+ alert('DXF с геометрией крестовых пазов создан. Проверить Т-стыки, фрезу, радиусы, допуски, обтяжку и посадку до производства.');
+}
+function printSheet(mode){printMode=mode;readInputs();const {w,d}=dims(),r=partsData();$('printSheet').innerHTML=`<h1>${mode==='client'?'Лист согласования':'Комплект производства'}</h1><p>Заказ: ${esc(state.name)} · Версия ${esc(state.version)}</p><p>Ткань: ${esc(state.fabric)} · Готовое изделие ${fmt(d)} × ${fmt(w)} × ${fmt(n(state.height))} мм</p>${mode==='production'?`<h2>Детали МДФ — предварительно</h2><table>${r.map(row=>'<tr>'+row.map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr>').join('')}</table><p>Проверить конструкцию, стыки и допуски перед распилом.</p>`:'<p>Согласовать размеры и расположение отделений перед производством.</p>'}`;const sections=['project','plan','details','cost','orders'];sections.forEach(id=>$(id).classList.add('hidden'));$('printSheet').style.display='block';window.print();setTimeout(()=>{$('printSheet').style.display='';tab(currentTab)},700)}fields.forEach(k=>$(k).addEventListener('input',readInputs));state=defaults();syncInputs();tab('project');$('jsStatus').textContent='✓ Интерактивные функции запущены';$('jsStatus').style.background='#e5eee2';$('jsStatus').style.color='#36553b';
+
+// 6.3: preliminary shelf-packing by MDF thickness. Coordinates in millimetres.
+let lastOptimization=null;
+function cutItems(){
+ const items=[];
+ for(const [label,size,t,qty] of partsData()){
+  const m=String(size).replace(/,/g,'.').match(/^\s*(\d+(?:\.\d+)?)\s*[×xX]\s*(\d+(?:\.\d+)?)/);
+  if(!m)throw Error('Не удалось прочитать размер: '+label);
+  const a=+m[1],b=+m[2],th=+t,q=+qty;
+  if(![a,b,th,q].every(Number.isFinite)||a<=0||b<=0||th<=0||!Number.isInteger(q)||q<1||q>500)throw Error('Некорректная деталь: '+label);
+  for(let j=0;j<q;j++)items.push({label,a,b,t:th,partNo:items.length+1});
+ }
+ return items;
+}
+function packing(){
+ readInputs();
+ const L=+$('sheetL').value,W=+$('sheetW').value,k=+$('sawKerf').value,m=+$('sheetMargin').value;
+ if(![L,W,k,m].every(Number.isFinite)||L<=0||W<=0||k<0||m<0||L<=2*m||W<=2*m)throw Error('Проверьте размеры листа, пропил и отступ');
+ const byT={};cutItems().forEach(it=>(byT[it.t]??=[]).push(it));
+ const sheets=[],oversize=[];
+ for(const [th,group] of Object.entries(byT)){
+  const sorted=group.sort((a,b)=>Math.max(b.a,b.b)-Math.max(a.a,a.b));
+  let layerSheets=[];
+  for(const item of sorted){
+   let chosen=null;
+   for(const sheet of layerSheets){
+    for(const rotated of [false,true]){
+     const a=rotated?item.b:item.a,b=rotated?item.a:item.b;
+     for(const row of sheet.rows){
+      if(b<=row.h+1e-8 && row.x+a<=L-m+1e-8){chosen={sheet,row,x:row.x,y:row.y,a,b,rotated,newRow:false};break;}
+     }
+     if(chosen)break;
+     const y=sheet.nextY;
+     if(m+a<=L-m+1e-8&&y+b<=W-m+1e-8){chosen={sheet,x:m,y,a,b,rotated,newRow:true};break;}
+    }
+    if(chosen)break;
+   }
+   if(!chosen){
+    const sheet={thickness:+th,rows:[],nextY:m,placed:[]};
+    for(const rotated of [false,true]){
+     const a=rotated?item.b:item.a,b=rotated?item.a:item.b;
+     if(m+a<=L-m+1e-8&&m+b<=W-m+1e-8){chosen={sheet,x:m,y:m,a,b,rotated,newRow:true};break;}
+    }
+    if(!chosen){oversize.push(item);continue;}
+    layerSheets.push(sheet);sheets.push(sheet);
+   }
+   const {sheet,a,b,x,y,rotated}=chosen;
+   if(chosen.newRow){const row={x:x+a+k,y,h:b};sheet.rows.push(row);sheet.nextY=y+b+k;}
+   else chosen.row.x=x+a+k;
+   sheet.placed.push({...item,x,y,w:a,h:b,rotated});
+  }
+ }
+ return {sheets,oversize,L,W,k,m};
+}
+function optimizeSheets(){
+ try{
+  const o=packing();lastOptimization=o;
+  const total=o.sheets.reduce((a,s)=>a+s.placed.reduce((v,p)=>v+p.w*p.h,0),0),area=o.sheets.length*o.L*o.W;
+  $('optResult').innerHTML=`<b>${o.sheets.length} лист(ов)</b> · площадь деталей ${fmt(total/1e6)} м² · заполнение ${area?fmt(100*total/area):0}%<br>`+o.sheets.map((s,i)=>`Лист ${i+1} · МДФ ${s.thickness} мм · ${s.placed.length} деталей`).join('<br>')+(o.oversize.length?`<p style="color:#a33">Не помещаются: ${o.oversize.map(x=>esc(x.label)).join(', ')}</p>`:'')+'<p class="muted">Это эвристическая полочная раскладка, не оптимальный раскрой и не маршрут пилы. Поворот деталей разрешён; направление текстуры не учитывается.</p>';
+  return o;
+ }catch(e){alert(e.message);return null;}
+}
+function exportOptimizationCSV(){const o=optimizeSheets();if(!o||o.oversize.length)return alert('Сначала устраните детали, не помещающиеся на лист.');const rows=[['Лист','Толщина МДФ','№ детали','Наименование','X мм','Y мм','Длина X мм','Ширина Y мм','Поворот 90°'],...o.sheets.flatMap((s,i)=>s.placed.map(p=>[i+1,s.thickness,p.partNo,p.label,p.x,p.y,p.w,p.h,p.rotated?'Да':'Нет']))];download('karta-raskroya-'+state.name.replace(/[^\wа-яё-]/gi,'_')+'.csv','\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n'),'text/csv;charset=utf-8')}
+function exportOptimizedDXF(){
+ const o=optimizeSheets();if(!o||o.oversize.length)return alert('Есть детали, которые не помещаются на лист.');
+ const out=['0','SECTION','2','HEADER','9','$ACADVER','1','AC1009','9','$INSUNITS','70','4','0','ENDSEC','0','SECTION','2','ENTITIES'];
+ const line=(x,y,X,Y,layer)=>out.push('0','LINE','8',layer,'10',String(x),'20',String(y),'30','0','11',String(X),'21',String(Y),'31','0');
+ const rect=(x,y,w,h,layer)=>{line(x,y,x+w,y,layer);line(x+w,y,x+w,y+h,layer);line(x+w,y+h,x,y+h,layer);line(x,y+h,x,y,layer)};
+ o.sheets.forEach((s,i)=>{const ox=i*(o.L+100),layer='MDF_'+String(s.thickness).replace('.','_');rect(ox,0,o.L,o.W,'SHEET_BORDER');s.placed.forEach(p=>rect(ox+p.x,p.y,p.w,p.h,layer));});
+ out.push('0','ENDSEC','0','EOF');download('raskroy-'+state.name.replace(/[^\wа-яё-]/gi,'_')+'.dxf',out.join('\n')+'\n','application/dxf');alert('Создан DXF контуров листов и заготовок. НЕ готовая программа ЧПУ: пазы, текстура, технологические перемычки и траектории инструмента не рассчитаны.');
+}
+
+/* v6.9: readable MDF specification, per-part textile estimate, and cell grid insert */
+(function(){
+ const opt=document.createElement('option');opt.value='grid';opt.textContent='Мелкие квадратные ячейки (сетка)';$('insertType').appendChild(opt);
+ const ins=$('insertType').closest('.card');
+ const cfg=document.createElement('div');cfg.className='grid';cfg.style.marginTop='12px';cfg.innerHTML='<div class="field"><label>Сетка: столбцов</label><input id="gridCols" type="number" min="1" max="20" value="3"></div><div class="field"><label>Сетка: рядов</label><input id="gridRows" type="number" min="1" max="20" value="4"></div>';
+ $('insertType').parentElement.after(cfg);
+ const prod=$('parts').closest('.card');
+ const block=document.createElement('div');block.innerHTML='<h2 style="margin-top:24px">Деталировка по толщине МДФ</h2><p class="muted">Размеры заготовок: ширина × глубина/длина × высота, мм. Толщина МДФ указана отдельно. Перед распилом проверьте ориентацию деталей и технологические припуски.</p><div id="mdfGrouped"></div><div class="actions noprint"><button onclick="exportGroupedMDF()">Скачать деталировку МДФ (CSV)</button><button class="primary" onclick="printProductionPDF()">Ведомости в PDF</button><button onclick="printTextilePDF()">Ткань отдельно в PDF</button></div><h2 style="margin-top:24px">Раскрой ткани — полная обтяжка одним отрезом</h2><div class="field" style="max-width:250px"><label>Припуск ткани на сторону, мм</label><input id="textileMargin" type="number" min="0" step="1" value="15"></div><div id="textileDetails" style="margin-top:12px"></div><div class="actions noprint"><button onclick="exportTextileDetails()">Скачать расчёт ткани (CSV)</button></div>';
+ prod.appendChild(block);
+ $('textileMargin').addEventListener('input',()=>{state.textileMargin=Math.max(0,n($('textileMargin').value,15));renderTextileDetail()});
+})();
+const v69ApplyInsert=applyInsert;applyInsert=function(){v69ApplyInsert();const c=getCell();if(c.insert==='grid'){c.gridCols=Math.max(1,Math.min(20,Math.round(n($('gridCols').value,3))));c.gridRows=Math.max(1,Math.min(20,Math.round(n($('gridRows').value,4))));}render()};
+const v69RenderPlan=renderPlan;renderPlan=function(){v69RenderPlan();const c=getCell();if($('gridCols'))$('gridCols').value=c.gridCols||3;if($('gridRows'))$('gridRows').value=c.gridRows||4;state.cells.forEach((cell,i)=>{if(cell.insert!=='grid')return;const el=$('planCanvas').querySelectorAll('.cell')[i];if(!el)return;const cols=Math.max(1,Math.min(20,cell.gridCols||3)),rows=Math.max(1,Math.min(20,cell.gridRows||4));const mesh=document.createElement('div');mesh.style.cssText=`position:absolute;inset:3px;pointer-events:none;opacity:.8;background-image:linear-gradient(to right,#81917b 1px,transparent 1px),linear-gradient(to bottom,#81917b 1px,transparent 1px);background-size:${100/cols}% ${100/rows}%;border-right:1px solid #81917b;border-bottom:1px solid #81917b`;el.insertBefore(mesh,el.firstChild);});};
+const v69InsertMetrics=insertMetrics;insertMetrics=function(c){const m=v69InsertMetrics(c);if(c.insert==='grid'){const cols=Math.max(1,Math.min(20,c.gridCols||3)),rows=Math.max(1,Math.min(20,c.gridRows||4));const sz=cellDim(c),t=n(state.partitionT,4),h=Math.max(0,n(state.height)-2*n(state.fabricT)-n(state.partitionDrop));const linear=(cols-1)*sz.d+(rows-1)*sz.w;const margin=n(state.textileMargin,15);m.kind='grid';m.count=(cols-1)+(rows-1);m.details=`${cols} × ${rows} = ${cols*rows} ячеек; ${m.count} внутренних перегородок, высота ${fmt(h)} мм`;m.fabricArea=2*linear*(h+2*margin)+2*linear*(t+2*margin);m.material=m.count*n(state.insertPrices?.grid,0);m.work=m.count*n(state.insertHours?.grid,0);m.labour=m.work*n(state.cost.rate);m.total=m.material+m.labour;}return m;};
+function mdfSpecification(){const groups={};for(const r of partsData()){const [name,measure,thickness,qty]=r;const [length,height]=String(measure).split(' × ').map(v=>Number(String(v).replace(/\s/g,'').replace(',','.')));const th=Number(thickness);if(!groups[th])groups[th]=[];groups[th].push({name,th,qty:Number(qty),length,height,depth:th});}for(const c of state.cells){if(c.insert!=='grid')continue;const sz=cellDim(c),cols=Math.max(1,Math.min(20,c.gridCols||3)),rows=Math.max(1,Math.min(20,c.gridRows||4)),th=n(state.partitionT),h=Math.max(0,n(state.height)-2*n(state.fabricT)-n(state.partitionDrop));if(!groups[th])groups[th]=[];if(cols>1)groups[th].push({name:'Сетка · продольная перегородка',th,qty:cols-1,length:sz.d,height:h,depth:th});if(rows>1)groups[th].push({name:'Сетка · поперечная перегородка',th,qty:rows-1,length:sz.w,height:h,depth:th});}return groups;}
+function mdfRows(){return Object.entries(mdfSpecification()).sort((a,b)=>Number(a[0])-Number(b[0])).flatMap(([th,rows])=>rows.map(r=>[`${th} мм`,r.name,fmt(r.length),fmt(r.depth),fmt(r.height),r.qty]));}
+function renderMDFGrouped(){const target=$('mdfGrouped');if(!target)return;const groups=mdfSpecification();target.innerHTML=`<p class="notice"><b>Контроль высоты:</b> готовый органайзер ${fmt(n(state.height))} мм → наружный борт ${fmt(Math.max(0,n(state.height)-2*n(state.fabricT)))} мм; перегородки ${fmt(Math.max(0,n(state.height)-2*n(state.fabricT)-n(state.partitionDrop)))} мм.</p>`+Object.entries(groups).sort((a,b)=>Number(a[0])-Number(b[0])).map(([th,rows])=>`<h3>МДФ ${esc(th)} мм — ${rows.reduce((s,r)=>s+r.qty,0)} шт.</h3><div style="overflow-x:auto"><table><thead><tr><th>Деталь</th><th>Размер Ш × Г × В, мм</th><th>Кол-во</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.name)}</td><td>${fmt(r.length)} × ${fmt(r.depth)} × ${fmt(r.height)}</td><td>${r.qty}</td></tr>`).join('')}</tbody></table></div>`).join('')+'<p class="muted">Для плоских деталей «глубина» в записи Ш × Г × В обозначает толщину листа. При экспорте для раскроя используются две плоскостные стороны и толщина отдельно. Сетка внутри ячейки — предварительная деталировка: стыки и пазы нужно проверить.</p>';}
+function exportGroupedMDF(){csvDownload('mdf-po-tolshchine',[['Толщина МДФ','Деталь','Ширина/длина, мм','Глубина/толщина, мм','Высота, мм','Количество'],...mdfRows()]);}
+function textileRows(){const margin=Math.max(0,n(state.textileMargin,15)),rows=[];const groups=mdfSpecification();for(const [th,parts] of Object.entries(groups))for(const p of parts){const length=p.length+2*margin,height=p.height+2*margin;rows.push([`МДФ ${th} мм · ${p.name}`,p.qty,fmt(length),fmt(height),fmt(p.qty*length*height/1e6),'Одна лицевая сторона; припуски на каждую сторону']);}for(let i=0;i<state.cells.length;i++){const c=state.cells[i],m=insertMetrics(c);if(c.insert!=='none')rows.push([`Ячейка ${i+1} · ${extLabels[c.insert]||c.insert}`,m.count,'—','—',fmt(m.fabricArea/1e6),m.details]);}return rows;}
+function renderTextileDetail(){const el=$('textileDetails');if(!el)return;const rows=textileRows(),total=rows.reduce((s,r)=>s+Number(String(r[4]).replace(/\s/g,'').replace(',','.')),0);const width=n(state.fabricWidth,1400);el.innerHTML=`<p><b>Итого по деталям:</b> ${fmt(total)} м² · теоретически ${fmt(total*1000/width)} пог. м при ширине рулона ${fmt(width)} мм.</p><div style="overflow-x:auto"><table><thead><tr><th>Элемент</th><th>Шт.</th><th>Крой Ш, мм</th><th>Крой Д, мм</th><th>Площадь, м²</th></tr></thead><tbody>${rows.map(r=>`<tr>${r.slice(0,5).map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="muted">Это расчёт только одной лицевой стороны МДФ и вставок. Для полной обтяжки с двух сторон, заворотов, направления ворса, швов и отходов расход будет больше. Не является готовой картой раскроя ткани.</p>`;}
+function exportTextileDetails(){csvDownload('tkan-po-detalyam',[['Элемент','Количество','Крой Ш, мм','Крой Д, мм','Площадь, м²','Примечание'],...textileRows()]);}
+const v69Render=render;render=function(){v69Render();if($('textileMargin')&&document.activeElement!==$('textileMargin'))$('textileMargin').value=state.textileMargin??15;renderMDFGrouped();renderTextileDetail();};
+render();
+
+
+// 7.4 — printable production report. Browser Print -> Save as PDF (iPad Safari supported).
+function printProductionPDF(){
+ readInputs();
+ const cut=cutRows70(),fabric=textileDetails70(),o=packing();
+ const escV=v=>esc(String(v??''));
+ const tbl=(heads,rows)=>'<table class="report-table"><thead><tr>'+heads.map(x=>'<th>'+escV(x)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(v=>'<td>'+escV(v)+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+ const grouped=[...new Set(cut.map(x=>x.th))].sort((a,b)=>b-a).map(th=>{
+  const rows=cut.filter(x=>x.th===th);
+  return '<h2>МДФ '+fmt(th)+' мм</h2>'+tbl(['Деталь','Длина × высота/ширина, мм','Количество, шт.'],rows.map(r=>[r.name,fmt(r.L)+' × '+fmt(r.H),r.qty]));
+ }).join('');
+ const tissue=tbl(['Деталь','Размер отреза, мм','Шт.','Площадь, м²'],fabric.map(r=>[r.name,r.w===null?'Выкройка не определена':fmt(r.w)+' × '+fmt(r.h),r.qty,fmt(r.area)]));
+ const total=fabric.reduce((a,r)=>a+r.area,0),reserve=Math.max(0,n(state.textileWaste,10));
+ const sheets=o.sheets.map((sh,i)=>'<h3>Лист '+(i+1)+' · МДФ '+fmt(sh.thickness)+' мм</h3>'+tbl(['№','Деталь','X, мм','Y, мм','Размер, мм','Поворот'],sh.placed.map(p=>[p.partNo,p.label,fmt(p.x),fmt(p.y),fmt(p.w)+' × '+fmt(p.h),p.rotated?'Да':'Нет']))).join('');
+ const warning=o.oversize.length?'<p><b>Не помещаются на лист:</b> '+o.oversize.map(x=>escV(x.label)).join(', ')+'</p>':'';
+ const {w,d}=dims();
+ const report=`<div class="report-title"><h1>Производственная ведомость</h1><p>Karina Tray Studio v7.5 · Заказ: ${escV(state.name)} · Ткань: ${escV(state.fabric)}</p><p>Готовый размер: ${fmt(d)} × ${fmt(w)} × ${fmt(n(state.height))} мм</p><p><b>Контроль:</b> высота готового изделия ${fmt(n(state.height))} мм; борт МДФ ${fmt(Math.max(0,n(state.height)-2*n(state.fabricT,2)))} мм; перегородки на ${fmt(n(state.partitionDrop,2))} мм ниже.</p></div><h2>1. Ведомость распила</h2><p>Каждый размер — плоская заготовка из листа указанной толщины. Дно внутри четырёх бортов.</p>${grouped}<h2>2. Раскрой ткани</h2><p>Один цельный отрез на деталь, обтяжка со всех сторон. Припуск ${fmt(n(state.textileMargin,15))} мм.</p>${tissue}<p><b>Всего:</b> ${fmt(total)} м² без запаса, ${fmt(total*(1+reserve/100))} м² с запасом ${fmt(reserve)}%.</p><h2>3. Карта раскладки МДФ</h2><p>Лист ${fmt(o.L)} × ${fmt(o.W)} мм; пропил ${fmt(o.k)} мм; отступ ${fmt(o.m)} мм. Всего листов: ${o.sheets.length}.</p>${sheets}${warning}<p class="report-warning">ПРЕДВАРИТЕЛЬНАЯ ВЕДОМОСТЬ. Проверить детали, пазы, ориентацию и допуски перед распилом. Для сетки мелких ячеек дополнительные перегородки включены в ведомость МДФ, но старый оптимизатор листов может их не учитывать. Выкройки мягких наполнений могут требовать уточнения.</p>`;
+ const node=$('printSheet');node.innerHTML=report;
+ document.body.classList.add('production-print');
+ const cleanup=()=>{document.body.classList.remove('production-print');window.removeEventListener('afterprint',cleanup)};
+ window.addEventListener('afterprint',cleanup);
+ window.print();
+ setTimeout(cleanup,15000);
+}
+
+</script><script>
+// v6.8 additive features; all project data remains in schema 6 for backwards compatibility.
+const extraDefaults=()=>({template:'custom',fabricWidth:1400,fabricAllowance:15,watchPadding:5,insertPrices:{rings:35,watch:180,grid:0,necklace:95,glasses:80,belt:60},insertHours:{rings:0.08,watch:0.35,grid:0,necklace:0.2,glasses:0.1,belt:0.1}});
+function ensureExtras(){for(const [k,v] of Object.entries(extraDefaults()))if(state[k]===undefined)state[k]=deep(v);}
+const extLabels={none:'Пустая',rings:'Валики для колец',watch:'Подушка для часов',grid:'Сетка',necklace:'Волны для цепочек',glasses:'Очки',belt:'Ремни / аксессуары'};
+function safeMm(v){return Math.max(0,n(v));}
+function insertMetrics(c){const sz=cellDim(c),kind=c.insert||'none',p=safeMm(state.insertPrices?.[kind]),hours=safeMm(state.insertHours?.[kind]);let count=kind==='none'?0:1,details='',fabricArea=0,work=hours;
+if(kind==='rings'){const r=rollData(c);count=r.count;const circumference=Math.PI*(safeMm(c.core||15)+2*safeMm(c.cover??2));const allowance=safeMm(state.fabricAllowance);fabricArea=count*(circumference+allowance)*(r.along+2*allowance);work=count*hours;details=`${count} валиков · готовый Ø${fmt(r.diam)} мм · длина ${fmt(r.along)} мм · вплотную`}
+else if(kind==='watch'){const pad=safeMm(state.watchPadding),w=Math.max(0,sz.w-2*pad),d=Math.max(0,sz.d-2*pad),h=Math.max(0,Math.min(25,state.height-state.baseT));const a=safeMm(state.fabricAllowance);fabricArea=2*(w*d+w*h+d*h)+2*a*(w+d);details=`1 подушка, ориентир ${fmt(w)} × ${fmt(d)} × ${fmt(h)} мм, отступ ${fmt(pad)} мм`;}
+else if(kind!=='none'){const a=safeMm(state.fabricAllowance);fabricArea=(sz.w+2*a)*(sz.d+2*a);details=`Отсек ${fmt(sz.w)} × ${fmt(sz.d)} мм; геометрия мягкой вставки требует выкройки`}
+return {kind,count,details,fabricArea,material:count*p,work,labour:work*safeMm(state.cost.rate),total:count*p+work*safeMm(state.cost.rate)};}
+function updateExtras(){ensureExtras();for(const id of ['fabricWidth','fabricAllowance','watchPadding']){const el=$(id);if(el&&document.activeElement!==el)el.value=state[id];}for(const k of Object.keys(state.insertPrices)){const el=$('ip_'+k);if(el&&document.activeElement!==el)el.value=state.insertPrices[k];const h=$('ih_'+k);if(h&&document.activeElement!==h)h.value=state.insertHours[k];}const sel=$('templateSelect');if(sel)sel.value=state.template;renderInsertSummary();render3D();}
+function applyTemplate(){const t=$('templateSelect').value;if(t==='custom')return;const layouts={two:[{x:0,y:0,w:.5,h:1},{x:.5,y:0,w:.5,h:1}],four:[{x:0,y:0,w:.5,h:.5},{x:.5,y:0,w:.5,h:.5},{x:0,y:.5,w:.5,h:.5},{x:.5,y:.5,w:.5,h:.5}],rings:[{x:0,y:0,w:.5,h:1,insert:'rings'},{x:.5,y:0,w:.5,h:1,insert:'watch'}],mixed:[{x:0,y:0,w:.65,h:.5,insert:'watch'},{x:0,y:.5,w:.65,h:.5,insert:'glasses'},{x:.65,y:0,w:.35,h:.5,insert:'rings'},{x:.65,y:.5,w:.35,h:.5,insert:'necklace'}],grid:[...Array.from({length:12},(_,i)=>({x:(i%3)/3,y:Math.floor(i/3)/4,w:1/3,h:1/4}))]};if(!layouts[t])return;if(!confirm('Заменить текущую планировку шаблоном?'))return;history.push(deep(state.cells));state.cells=layouts[t].map((c,i)=>({id:'t'+Date.now()+'_'+i,insert:'none',...c}));state.template=t;selected=state.cells[0].id;activeDivider=null;render();}
+function renderInsertSummary(){const target=$('insertSummary');if(!target)return;let fabric=0,price=0,work=0;const rows=state.cells.map((c,i)=>{const m=insertMetrics(c);fabric+=m.fabricArea;price+=m.material;work+=m.work;return m.kind==='none'?'':`<tr><td>${i+1}. ${esc(extLabels[m.kind]||m.kind)}</td><td>${esc(m.details)}</td><td>${fmt(m.material)} ₽</td><td>${fmt(m.work)} ч</td></tr>`}).filter(Boolean);const baseFabricArea=(dims().w*dims().d*2+2*(dims().w+dims().d)*state.height)*1.2;const totalArea=fabric+baseFabricArea;const linear=state.fabricWidth>0?totalArea/state.fabricWidth:0;target.innerHTML=`<p><b>Ткань, предварительно:</b> ${fmt(totalArea/1e6)} м², эквивалент ${fmt(linear/1000)} пог. м при ширине ${fmt(state.fabricWidth)} мм (без раскладки выкроек).</p><p><b>Наполнения:</b> материалы ${fmt(price)} ₽ · работа ${fmt(work)} ч · с работой ${fmt(price+work*state.cost.rate)} ₽</p>`+(rows.length?`<div style="overflow:auto"><table><thead><tr><th>Ячейка</th><th>Расчёт</th><th>Материалы</th><th>Работа</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>`:'<p class="muted">Выберите наполнения на плане.</p>')+'<p class="muted">Площадь ткани — оценка расхода, не карта раскроя. Учитывайте ворс, направление ткани, швы, клей и отходы.</p>';return {fabric,price,work,totalArea};}
+function render3D(){const svg=$('preview3D');if(!svg)return;const W=540,H=380,ix=95,iy=55,iw=340,ih=245,skew=48,depth=37;const fabric=(state.fabric||'').toLowerCase();let color=fabric.includes('бургунд')?'#8e5963':fabric.includes('зел')?'#667c6d':fabric.includes('сер')?'#9e9e9a':fabric.includes('син')?'#687a9c':fabric.includes('беж')?'#bcae9c':'#c5b8a9';let shapes=`<polygon points="${ix},${iy+ih} ${ix+skew},${iy+ih+depth} ${ix+iw+skew},${iy+ih+depth} ${ix+iw},${iy+ih}" fill="#676c60"/><polygon points="${ix+iw},${iy} ${ix+iw+skew},${iy+depth} ${ix+iw+skew},${iy+ih+depth} ${ix+iw},${iy+ih}" fill="#788273"/><rect x="${ix}" y="${iy}" width="${iw}" height="${ih}" rx="4" fill="${color}" stroke="#4e5d48" stroke-width="9"/>`;
+for(const c of state.cells){const x=ix+c.x*iw,y=iy+c.y*ih,w=c.w*iw,h=c.h*ih;shapes+=`<rect x="${x+3}" y="${y+3}" width="${Math.max(0,w-6)}" height="${Math.max(0,h-6)}" fill="#f0e8df" fill-opacity=".73" stroke="#7b8673" stroke-width="3"/>`;if(c.insert==='rings'){const r=rollData(c),qty=Math.min(r.count,70);for(let j=0;j<qty;j++){if(c.dir==='horizontal'){const xx=x+4+j*(w-8)/Math.max(1,qty);shapes+=`<line x1="${xx}" y1="${y+7}" x2="${xx}" y2="${y+h-7}" stroke="${color}" stroke-width="${Math.max(2,(w-8)/Math.max(1,qty)-1)}"/>`;}else{const yy=y+4+j*(h-8)/Math.max(1,qty);shapes+=`<line x1="${x+7}" y1="${yy}" x2="${x+w-7}" y2="${yy}" stroke="${color}" stroke-width="${Math.max(2,(h-8)/Math.max(1,qty)-1)}"/>`;}}}else if(c.insert==='watch'){shapes+=`<rect x="${x+w*.2}" y="${y+h*.25}" width="${w*.6}" height="${h*.5}" rx="12" fill="${color}" stroke="#fff8"/>`;}else if(c.insert==='necklace'){for(let j=1;j<=4;j++)shapes+=`<path d="M ${x+5} ${y+j*h/5} Q ${x+w/2} ${y+j*h/5-16} ${x+w-5} ${y+j*h/5}" stroke="${color}" fill="none" stroke-width="5"/>`;}else if(c.insert==='glasses'){shapes+=`<text x="${x+w/2}" y="${y+h/2}" font-size="${Math.min(32,w/3)}" text-anchor="middle" fill="#6c625b">◎ ◎</text>`;}}
+svg.innerHTML=shapes;}
+function setExtra(k,v){ensureExtras();state[k]=safeMm(v);updateExtras()}
+function setInsertPrice(k,v,which){ensureExtras();state[which][k]=safeMm(v);updateExtras();renderCostTotals()}
+const oldRender=render;render=function(){ensureExtras();oldRender();updateExtras();};
+const oldCostTotals=renderCostTotals;renderCostTotals=function(){ensureExtras();oldCostTotals();const total=state.cells.reduce((a,c)=>{const m=insertMetrics(c);return a+m.total},0);const c=state.cost,base=['mdf','cut','fabric','glue','pack'].reduce((s,k)=>s+safeMm(c[k]),0)+safeMm(c.hours)*safeMm(c.rate)+total;$('totalCost').textContent=fmt(base)+' ₽';$('sellPrice').textContent=fmt(base*(1+safeMm(c.markup)/100))+' ₽';if($('insertCostTotal'))$('insertCostTotal').textContent=fmt(total)+' ₽';};
+const oldRenderPlan=renderPlan;renderPlan=function(){oldRenderPlan();const c=getCell();const e=$('insertType');if(e)e.value=c.insert||'none';};
+const oldPrintSheet=printSheet;printSheet=function(mode){ensureExtras();const extra=state.cells.map((c,i)=>{const m=insertMetrics(c);return m.kind==='none'?'':`<tr><td>${i+1}</td><td>${esc(extLabels[m.kind])}</td><td>${esc(m.details)}</td></tr>`}).filter(Boolean).join('');const base=oldPrintSheet; // preserve native print workflow, append details before invoking print
+const prevPrint=window.print;window.print=function(){if($('printSheet')){$('printSheet').innerHTML+=`<h2>Планировка и наполнения</h2><table><tr><th>Ячейка</th><th>Тип</th><th>Расчёт</th></tr>${extra}</table><p>Перегородки ниже бортов на ${fmt(state.partitionDrop)} мм. Согласовать габариты, ткань и посадку.</p>`;}prevPrint.call(window)};try{base(mode)}finally{window.print=prevPrint}};
+const oldApplyInsert=applyInsert;applyInsert=function(){oldApplyInsert();renderCostTotals()};
+const oldRenderParts=renderParts;renderParts=function(){oldRenderParts();if($('insertSummary'))renderInsertSummary()};
+const oldSync=syncInputs;syncInputs=function(){ensureExtras();oldSync()};
+function exportSoftCSV(){ensureExtras();const rows=[['Ячейка','Наполнение','Размер ячейки, мм','Количество','Описание','Ткань, м²','Материалы, ₽','Работа, ч']];state.cells.forEach((c,i)=>{const m=insertMetrics(c),d=cellDim(c);if(m.kind!=='none')rows.push([i+1,extLabels[m.kind],fmt(d.w)+' × '+fmt(d.d),m.count,m.details,fmt(m.fabricArea/1e6),fmt(m.material),fmt(m.work)])});csvDownload('myagkie-vstavki',rows)}
+function csvDownload(prefix,rows){download(prefix+'-'+state.name.replace(/[^\wа-яё-]/gi,'_')+'.csv','\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n'),'text/csv;charset=utf-8')}
+function exportCostCSV(){const rows=[['Наполнение','Ячейка','Количество','Материалы, ₽','Работа, ч','Работа, ₽','Всего, ₽']];state.cells.forEach((c,i)=>{const m=insertMetrics(c);if(m.kind!=='none')rows.push([extLabels[m.kind],i+1,m.count,fmt(m.material),fmt(m.work),fmt(m.labour),fmt(m.total)])});csvDownload('stoimost-vstavok',rows)}
+// Ensure the first render after the add-on initializes all extra controls.
+ensureExtras();render();
+
+
+/* v7.0: production-ready readable grouped cut list and piecewise textile patterns */
+(function(){
+ const card=$('mdfGrouped').parentElement;
+ const info=document.createElement('div');info.className='notice';info.innerHTML='<b>Как читать размеры:</b> каждая деталь выпиливается из плоского листа. Для распила указаны <b>длина × высота/ширина заготовки</b>, толщина листа отдельно. Пазы и соединения требуют проверки перед производством.';
+ card.insertBefore(info,$('mdfGrouped'));
+ const textile=$('textileDetails');
+ const options=document.createElement('div');options.className='grid three';options.innerHTML=`<div class="field"><label>Способ обтяжки</label><div class="notice">Один цельный отрез на каждую деталь · две стороны и все торцы</div></div><div class="field"><label>Запас ткани, %</label><input id="textileWaste" type="number" min="0" max="100" step="1" value="10"></div><div class="field"><label>Способ расчёта</label><div class="muted">Отдельный отрез на каждую деталь</div></div>`;
+ textile.before(options);
+
+ $('textileWaste').addEventListener('input',()=>{state.textileWaste=Math.max(0,n($('textileWaste').value,10));renderTextileDetail()});
+})();
+function cutRows70(){return Object.entries(mdfSpecification()).sort((a,b)=>Number(a[0])-Number(b[0])).flatMap(([th,rs])=>rs.map(r=>({th:Number(th),name:r.name,qty:r.qty,L:r.length,H:r.height,area:r.qty*r.length*r.height/1e6})));}
+renderMDFGrouped=function(){const el=$('mdfGrouped');if(!el)return;const rs=cutRows70();el.innerHTML=[...new Set(rs.map(r=>r.th))].map(th=>{const list=rs.filter(r=>r.th===th),area=list.reduce((s,r)=>s+r.area,0);return `<h3>МДФ ${fmt(th)} мм · ${list.reduce((s,r)=>s+r.qty,0)} деталей · ${fmt(area)} м²</h3><div style="overflow:auto"><table><thead><tr><th>Что пилить</th><th>Заготовка Д × В/Ш, мм</th><th>Шт.</th><th>Площадь, м²</th></tr></thead><tbody>${list.map(r=>`<tr><td>${esc(r.name)}</td><td><b>${fmt(r.L)} × ${fmt(r.H)}</b></td><td>${r.qty}</td><td>${fmt(r.area)}</td></tr>`).join('')}</tbody></table></div>`}).join('')+`<p class="muted">Итого МДФ: ${rs.reduce((s,r)=>s+r.qty,0)} деталей. Площадь без отходов распила. Сетка учитывается в этой ведомости, но ещё не в старом DXF и оптимизаторе листов — для сетки используйте CSV ниже и проверяйте пазы.</p>`};
+exportGroupedMDF=function(){const rows=[['Материал','Название детали','Длина заготовки, мм','Высота/ширина заготовки, мм','Толщина МДФ, мм','Количество, шт','Площадь, м²']];cutRows70().forEach(r=>rows.push(['МДФ '+fmt(r.th)+' мм',r.name,r.L,r.H,r.th,r.qty,r.area.toFixed(4)]));csvDownload('VEDOMOST-RASPILA-MDF',rows)};
+function textileDetails70(){const margin=Math.max(0,n(state.textileMargin,15)),rows=[];for(const r of cutRows70()){
+ // Single continuous wrap: front + back + 2 edges along height, with allowance at each edge.
+ // Width runs along length; height dimension traverses the wrapped cross-section.
+ const fabricThickness=Math.max(0,n(state.fabricT,2));
+ const width=r.L+2*(r.th+fabricThickness)+2*margin;
+ const height=2*r.H+2*(r.th+fabricThickness)+2*margin;
+ rows.push({name:'МДФ '+fmt(r.th)+' мм · '+r.name,qty:r.qty,w:width,h:height,area:width*height*r.qty/1e6,note:'Один цельный отрез: обе плоскости, торцы, подгибы по 15 мм (настраивается)'});
+ }
+ state.cells.forEach((c,i)=>{if(c.insert==='none'||c.insert==='grid')return;const m=insertMetrics(c),sz=cellDim(c);if(c.insert==='rings'){
+ const roll=rollData(c),diam=Math.max(0,n(c.core,15)),cover=Math.max(0,n(c.cover,2));
+ const w=roll.along+2*margin,h=Math.PI*(diam+2*cover)+2*margin;
+ rows.push({name:'Ячейка '+(i+1)+' · ткань для валиков',qty:roll.count,w,h,area:w*h*roll.count/1e6,note:'Развёртка цилиндра + припуски; проверить нахлёст на образце'});
+ }else if(c.insert==='watch'){
+ const pad=Math.max(0,n(state.watchPadding,8)),w=Math.max(0,sz.w-2*pad)+2*margin,h=Math.max(0,sz.d-2*pad)+2*margin;
+ rows.push({name:'Ячейка '+(i+1)+' · подушка для часов',qty:1,w,h,area:w*h/1e6,note:'Только лицевая выкройка; высота, боковины и швы требуют уточнения'});
+ }else{
+ rows.push({name:'Ячейка '+(i+1)+' · '+(extLabels[c.insert]||c.insert),qty:1,w:null,h:null,area:0,note:'Нет проверенной выкройки; расход не включён в итог'});
+ }
+ });return rows;}
+textileRows=function(){return textileDetails70().map(r=>[r.name,r.qty,r.w===null?'Уточнить':fmt(r.w),r.h===null?'Уточнить':fmt(r.h),fmt(r.area),r.note]);};
+renderTextileDetail=function(){const el=$('textileDetails');if(!el)return;const rows=textileDetails70(),area=rows.reduce((s,r)=>s+r.area,0),w=Math.max(1,n(state.fabricWidth,1400)),waste=Math.max(0,n(state.textileWaste,10)),total=area*(1+waste/100);const warnings=rows.filter(r=>r.w===null);el.innerHTML=`<p><b>Раскрой по каждой детали:</b> ${rows.reduce((s,r)=>s+r.qty,0)} отрезов, расчётная площадь ${fmt(area)} м², с запасом ${fmt(waste)}% — <b>${fmt(total)} м²</b>.</p><p>Теоретический эквивалент при ширине рулона ${fmt(w)} мм: <b>${fmt(total*1000/w)} пог. м</b> (не карта раскладки, реальный расход может быть выше).</p><div style="overflow:auto"><table><thead><tr><th>На какую деталь</th><th>Отрез ткани Ш × Д, мм</th><th>Шт.</th><th>Всего, м²</th><th>Примечание</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.w===null?'Требует выкройки':`<b>${fmt(r.w)} × ${fmt(r.h)}</b>`}</td><td>${r.qty}</td><td>${fmt(r.area)}</td><td>${esc(r.note)}</td></tr>`).join('')}</tbody></table></div>${warnings.length?`<p class="notice">Для ${warnings.length} типа(ов) наполнения выкройка не определена, поэтому их ткань в итог не входит.</p>`:''}<p class="muted">Один цельный отрез на каждую МДФ-деталь, обе стороны и торцы. Расчёт включает толщину ткани и припуск на подгиб. Раскладка ориентировочная: угловые складки, направление ворса, клеевой слой и фактический нахлёст требуют проверки на пробной детали. Площадь не равна фактической длине раскладки по рулону.</p>`;};
+exportTextileDetails=function(){const rows=[['Деталь','Количество отрезов','Ширина отреза, мм','Длина отреза, мм','Всего ткани, м²','Примечание'],...textileRows()];const a=textileDetails70().reduce((s,r)=>s+r.area,0),reserve=Math.max(0,n(state.textileWaste,10));rows.push([],['ИТОГО без запаса','','','',a.toFixed(4)],['ИТОГО с запасом '+reserve+'%','','','',(a*(1+reserve/100)).toFixed(4)]);csvDownload('VEDOMOST-RASKROYA-TKANI',rows)};
+const render70=render;render=function(){render70();if($('textileWaste')&&document.activeElement!==$('textileWaste'))$('textileWaste').value=state.textileWaste??10;renderMDFGrouped();renderTextileDetail()};
+render();
+
+
+// 7.4 — printable production report. Browser Print -> Save as PDF (iPad Safari supported).
+function printProductionPDF(){
+ readInputs();
+ const cut=cutRows70(),fabric=textileDetails70(),o=packing();
+ const escV=v=>esc(String(v??''));
+ const tbl=(heads,rows)=>'<table class="report-table"><thead><tr>'+heads.map(x=>'<th>'+escV(x)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(v=>'<td>'+escV(v)+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+ const grouped=[...new Set(cut.map(x=>x.th))].sort((a,b)=>b-a).map(th=>{
+  const rows=cut.filter(x=>x.th===th);
+  return '<h2>МДФ '+fmt(th)+' мм</h2>'+tbl(['Деталь','Длина × высота/ширина, мм','Количество, шт.'],rows.map(r=>[r.name,fmt(r.L)+' × '+fmt(r.H),r.qty]));
+ }).join('');
+ const tissue=tbl(['Деталь','Размер отреза, мм','Шт.','Площадь, м²'],fabric.map(r=>[r.name,r.w===null?'Выкройка не определена':fmt(r.w)+' × '+fmt(r.h),r.qty,fmt(r.area)]));
+ const total=fabric.reduce((a,r)=>a+r.area,0),reserve=Math.max(0,n(state.textileWaste,10));
+ const sheets=o.sheets.map((sh,i)=>'<h3>Лист '+(i+1)+' · МДФ '+fmt(sh.thickness)+' мм</h3>'+tbl(['№','Деталь','X, мм','Y, мм','Размер, мм','Поворот'],sh.placed.map(p=>[p.partNo,p.label,fmt(p.x),fmt(p.y),fmt(p.w)+' × '+fmt(p.h),p.rotated?'Да':'Нет']))).join('');
+ const warning=o.oversize.length?'<p><b>Не помещаются на лист:</b> '+o.oversize.map(x=>escV(x.label)).join(', ')+'</p>':'';
+ const {w,d}=dims();
+ const report=`<div class="report-title"><h1>Производственная ведомость</h1><p>Karina Tray Studio v7.5 · Заказ: ${escV(state.name)} · Ткань: ${escV(state.fabric)}</p><p>Готовый размер: ${fmt(d)} × ${fmt(w)} × ${fmt(n(state.height))} мм</p><p><b>Контроль:</b> высота готового изделия ${fmt(n(state.height))} мм; борт МДФ ${fmt(Math.max(0,n(state.height)-2*n(state.fabricT,2)))} мм; перегородки на ${fmt(n(state.partitionDrop,2))} мм ниже.</p></div><h2>1. Ведомость распила</h2><p>Каждый размер — плоская заготовка из листа указанной толщины. Дно внутри четырёх бортов.</p>${grouped}<h2>2. Раскрой ткани</h2><p>Один цельный отрез на деталь, обтяжка со всех сторон. Припуск ${fmt(n(state.textileMargin,15))} мм.</p>${tissue}<p><b>Всего:</b> ${fmt(total)} м² без запаса, ${fmt(total*(1+reserve/100))} м² с запасом ${fmt(reserve)}%.</p><h2>3. Карта раскладки МДФ</h2><p>Лист ${fmt(o.L)} × ${fmt(o.W)} мм; пропил ${fmt(o.k)} мм; отступ ${fmt(o.m)} мм. Всего листов: ${o.sheets.length}.</p>${sheets}${warning}<p class="report-warning">ПРЕДВАРИТЕЛЬНАЯ ВЕДОМОСТЬ. Проверить детали, пазы, ориентацию и допуски перед распилом. Для сетки мелких ячеек дополнительные перегородки включены в ведомость МДФ, но старый оптимизатор листов может их не учитывать. Выкройки мягких наполнений могут требовать уточнения.</p>`;
+ const node=$('printSheet');node.innerHTML=report;
+ document.body.classList.add('production-print');
+ const cleanup=()=>{document.body.classList.remove('production-print');window.removeEventListener('afterprint',cleanup)};
+ window.addEventListener('afterprint',cleanup);
+ window.print();
+ setTimeout(cleanup,15000);
+}
+
+function printTextilePDF(){
+ readInputs();
+ const fabric=textileDetails70();
+ const total=fabric.reduce((sum,r)=>sum+r.area,0);
+ const reserve=Math.max(0,n(state.textileWaste,10));
+ const width=Math.max(1,n(state.fabricWidth,1400));
+ const safe=v=>esc(String(v??''));
+ const rows=fabric.map((r,i)=>'<tr><td>'+(i+1)+'</td><td>'+safe(r.name)+'</td><td>'+(r.w===null?'Требует выкройки':fmt(r.w)+' × '+fmt(r.h))+'</td><td>'+fmt(r.qty)+'</td><td>'+fmt(r.area)+'</td><td>'+safe(r.note)+'</td></tr>').join('');
+ const {w,d}=dims();
+ $('printSheet').innerHTML='<h1>Ведомость раскроя ткани</h1><p>Karina Tray Studio v7.5 · Заказ: '+safe(state.name)+' · Ткань: '+safe(state.fabric)+'</p><p>Готовый органайзер: '+fmt(d)+' × '+fmt(w)+' × '+fmt(n(state.height))+' мм</p><p><b>Способ:</b> цельный отрез на каждую деталь; обтяжка обеих сторон и торцов; припуск на подгиб '+fmt(n(state.textileMargin,15))+' мм.</p><table class="report-table"><thead><tr><th>№</th><th>Деталь</th><th>Размер ткани, мм</th><th>Отрезов</th><th>Площадь, м²</th><th>Примечание</th></tr></thead><tbody>'+rows+'</tbody></table><h2>Итого по заказу</h2><p>Отрезов: <b>'+fabric.reduce((s,r)=>s+r.qty,0)+'</b>; площадь без запаса: <b>'+fmt(total)+' м²</b>; с запасом '+fmt(reserve)+'%: <b>'+fmt(total*(1+reserve/100))+' м²</b>.</p><p>Ширина рулона: '+fmt(width)+' мм; теоретический эквивалент: '+fmt(total*(1+reserve/100)*1000/width)+' пог. м.</p><p class="report-warning">Расчёт предварительный. Теоретический эквивалент не является картой раскладки по рулону. Учитывайте направление ворса, складки на углах и фактический нахлёст. Для строк «Требует выкройки» ткань в расчёт не включена.</p>';
+ document.body.classList.add('production-print');
+ const cleanup=()=>{document.body.classList.remove('production-print');window.removeEventListener('afterprint',cleanup)};
+ window.addEventListener('afterprint',cleanup);
+ window.print();setTimeout(cleanup,15000);
+}
+
+/* v7.8 — one clean production page; all buttons use one data source. */
+(function(){
+ const section=$('details');
+ Array.from(section.children).forEach(el=>el.style.display='none');
+ const panel=document.createElement('div');panel.className='card';panel.id='simpleProduction';
+ panel.innerHTML=`<h2>Детали для распила</h2><div id="simpleMDF"></div><div class="actions noprint"><button type="button" class="primary" id="pdfMdfBtn">PDF — распил МДФ</button></div><h2 style="margin-top:30px">Раскрой ткани</h2><p class="muted">Один цельный отрез на каждую деталь · припуск 15 мм. Размеры выкроек предварительные.</p><div id="simpleFabric"></div><div class="actions noprint"><button type="button" class="primary" id="pdfFabricBtn">PDF — раскрой ткани</button></div><h2 style="margin-top:30px">Файл проекта</h2><div class="actions noprint"><button type="button" id="saveJsonBtn">Сохранить проект (.json)</button><button type="button" id="openJsonBtn">Открыть проект (.json)</button></div><p class="muted">Размеры перед распилом и обтяжкой проверить на пробной сборке.</p>`;
+ section.appendChild(panel);
+ // Optimization is not needed, hide all optimization controls and remove old UI from view.
+ const css=document.createElement('style');css.textContent='#details > :not(#simpleProduction){display:none!important} #simpleProduction table{width:100%;border-collapse:collapse} #simpleProduction th,#simpleProduction td{padding:10px 8px;text-align:left;border-bottom:1px solid #e2e5de} #simpleProduction .actions{margin:14px 0 20px}';document.head.appendChild(css);
+})();
+function simpleRowsMDF(){return cutRows70().filter(r=>r.qty>0&&r.L>0&&r.H>0)}
+function simpleRowsFabric(){return textileDetails70().filter(r=>r.qty>0)}
+function simpleTable(heads,rows){return '<div style="overflow-x:auto"><table><thead><tr>'+heads.map(h=>'<th>'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(v=>'<td>'+esc(String(v))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'}
+function simpleRender(){
+ const m=$('simpleMDF'),f=$('simpleFabric');if(!m||!f)return;
+ const rows=simpleRowsMDF(),ths=[...new Set(rows.map(r=>r.th))].sort((a,b)=>b-a);
+ m.innerHTML=ths.map(th=>'<h3>МДФ '+fmt(th)+' мм</h3>'+simpleTable(['Деталь','Длина, мм','Ширина, мм','Шт.'],rows.filter(r=>r.th===th).map(r=>[r.name,fmt(r.L),fmt(r.H),r.qty]))).join('')||'<p>Нет деталей</p>';
+ const fabric=simpleRowsFabric();f.innerHTML=simpleTable(['Деталь','Длина, мм','Ширина, мм','Шт.'],fabric.map(r=>[r.name,r.w==null?'Уточнить':fmt(r.w),r.h==null?'Уточнить':fmt(r.h),r.qty]));
+}
+function simplePDF(type){
+ readInputs();
+ const mdf=simpleRowsMDF(),fabric=simpleRowsFabric();
+ const title=type==='mdf'?'Ведомость распила МДФ':'Ведомость раскроя ткани';
+ let html='<h1>'+title+'</h1><p>Заказ: '+esc(state.name||'Без названия')+'</p><p>Размер готового органайзера: '+fmt(dims().d)+' × '+fmt(dims().w)+' × '+fmt(n(state.height))+' мм</p>';
+ if(type==='mdf'){
+  for(const th of [...new Set(mdf.map(r=>r.th))].sort((a,b)=>b-a)) html+='<h2>МДФ '+fmt(th)+' мм</h2>'+simpleTable(['Деталь','Длина, мм','Ширина, мм','Шт.'],mdf.filter(r=>r.th===th).map(r=>[r.name,fmt(r.L),fmt(r.H),r.qty]));
+ }else html+=simpleTable(['Деталь','Длина отреза, мм','Ширина отреза, мм','Шт.'],fabric.map(r=>[r.name,r.w==null?'Уточнить':fmt(r.w),r.h==null?'Уточнить':fmt(r.h),r.qty]));
+ html+='<p style="margin-top:24px;font-size:12px">Предварительные размеры. Перед распилом и раскроем ткани проверить на образце.</p>';
+ const print=$('printSheet');print.innerHTML=html;
+ document.body.classList.add('production-print');
+ let cleaned=false;const cleanup=()=>{if(cleaned)return;cleaned=true;document.body.classList.remove('production-print');window.removeEventListener('afterprint',cleanup)};
+ window.addEventListener('afterprint',cleanup);
+ try{window.print()}catch(e){cleanup();alert('Не удалось открыть печать: '+e.message)}
+ setTimeout(cleanup,30000);
+}
+
+// v7.9: explicitly bind buttons; printable preview is visible even when iOS blocks print.
+function showSimpleReport(type){
+ readInputs();
+ const mdf=simpleRowsMDF(),fabric=simpleRowsFabric();
+ const title=type==='mdf'?'Ведомость распила МДФ':'Ведомость раскроя ткани';
+ let body='<h1>'+title+'</h1><p>Заказ: '+esc(state.name||'Без названия')+'</p>';
+ if(type==='mdf'){
+  for(const th of [...new Set(mdf.map(r=>r.th))].sort((a,b)=>b-a))body+='<h2>МДФ '+fmt(th)+' мм</h2>'+simpleTable(['Деталь','Длина, мм','Ширина, мм','Шт.'],mdf.filter(r=>r.th===th).map(r=>[r.name,fmt(r.L),fmt(r.H),r.qty]));
+ }else body+=simpleTable(['Деталь','Длина отреза, мм','Ширина отреза, мм','Шт.'],fabric.map(r=>[r.name,r.w==null?'Уточнить':fmt(r.w),r.h==null?'Уточнить':fmt(r.h),r.qty]));
+ body+='<p>Размеры предварительные. Проверьте перед производством.</p>';
+ let overlay=document.getElementById('reportOverlay');
+ if(!overlay){overlay=document.createElement('div');overlay.id='reportOverlay';document.body.appendChild(overlay)}
+ overlay.innerHTML='<div class="reportTools"><button type="button" id="reportBack">← Вернуться</button><button type="button" id="reportPrint" class="primary">Печать / сохранить PDF</button><span>На iPad: Печать → Поделиться → Сохранить в Файлы</span></div><div class="reportContent">'+body+'</div>';
+ overlay.style.display='block';
+ document.getElementById('reportBack').addEventListener('click',()=>overlay.style.display='none');
+ document.getElementById('reportPrint').addEventListener('click',()=>window.print());
+}
+function downloadProject79(){
+ readInputs();
+ const json=JSON.stringify({app:'Karina Tray Studio',schema:6,project:state},null,2);
+ const blob=new Blob([json],{type:'application/json'});
+ const filename='karina-tray-'+(state.name||'project').replace(/[^\wа-яё-]/gi,'_')+'.json';
+ const file=new File([blob],filename,{type:'application/json'});
+ if(navigator.canShare&&navigator.canShare({files:[file]})&&navigator.share){
+  navigator.share({files:[file],title:'Проект Karina Tray Studio'}).catch(e=>{if(e.name!=='AbortError')download(filename,json,'application/json')});
+ }else download(filename,json,'application/json');
+}
+function bindSimpleButtons79(){
+ const pairs=[['pdfMdfBtn',()=>showSimpleReport('mdf')],['pdfFabricBtn',()=>showSimpleReport('fabric')],['saveJsonBtn',downloadProject79],['openJsonBtn',()=>document.getElementById('importFile').click()]];
+ for(const [id,fn] of pairs){const el=document.getElementById(id);if(el)el.addEventListener('click',fn)}
+}
+const style79=document.createElement('style');style79.textContent=`#reportOverlay{display:none;position:fixed;inset:0;z-index:99999;background:white;overflow:auto;padding:20px;color:#222}#reportOverlay .reportTools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;position:sticky;top:0;background:white;padding:12px 0;border-bottom:1px solid #ddd}#reportOverlay .reportContent{max-width:850px;margin:20px auto}#reportOverlay table{width:100%;border-collapse:collapse}#reportOverlay td,#reportOverlay th{padding:10px;border-bottom:1px solid #ddd;text-align:left}@media print{body:has(#reportOverlay[style*="block"]) .shell{display:none!important}body:has(#reportOverlay[style*="block"]) #reportOverlay{display:block!important;position:static!important;padding:0!important}#reportOverlay .reportTools{display:none!important}}`;document.head.appendChild(style79);
+bindSimpleButtons79();
+const simpleOldRender78=render;render=function(){simpleOldRender78();simpleRender()};
+render();
+
+/* v8.0 — removable-source bottom pads, glued to the MDF base after fabric wrapping. */
+(function(){
+ const panel=$('simpleProduction');
+ const block=document.createElement('div');block.id='padSettings';block.innerHTML='<h2 style="margin-top:28px">Плашки на дне отделений</h2><p class="muted">Переплётный картон, обтянутый тканью. Плашки приклеиваются к общему дну МДФ; не заменяют его. Для сетки рассчитывается плашка для каждой маленькой ячейки.</p><div class="grid three"><div class="field"><label>Толщина картона, мм</label><input id="padThickness" type="number" min="0.5" max="10" step="0.5" value="2"></div><div class="field"><label>Монтажный зазор с каждой стороны, мм</label><input id="padGap" type="number" min="0" max="10" step="0.5" value="1"></div><div class="field"><label>Плашки в отделениях</label><select id="padEnabled"><option value="yes">Во всех отделениях</option><option value="no">Не добавлять</option></select></div></div><div id="simpleCardboard"></div><div class="actions noprint"><button type="button" class="primary" id="pdfCardboardBtn">PDF — раскрой картона</button></div>';
+ const fabricHeading=[...panel.querySelectorAll('h2')].find(x=>x.textContent.includes('Раскрой ткани'));
+ panel.insertBefore(block,fabricHeading);
+ for(const id of ['padThickness','padGap','padEnabled'])$(id).addEventListener('change',()=>{state[id]=id==='padEnabled'?$(id).value:n($(id).value);render()});
+ $('pdfCardboardBtn').addEventListener('click',()=>showSimpleReport('cardboard'));
+})();
+function padRows80(){
+ if(state.padEnabled==='no')return [];
+ const t=Math.max(.5,n(state.padThickness,2)),gap=Math.max(0,n(state.padGap,1)),ft=Math.max(0,n(state.fabricT,2)),partition=Math.max(0,n(state.partitionT,4));
+ const rows=[];
+ state.cells.forEach((c,i)=>{
+  const dim=cellDim(c),cols=c.insert==='grid'?Math.max(1,Math.min(20,Math.round(n(c.gridCols,3)))):1,lines=c.insert==='grid'?Math.max(1,Math.min(20,Math.round(n(c.gridRows,4)))):1;
+  // The existing cell geometry represents a nominal opening. Deduct wrapped inner grid walls,
+  // plus cloth and fit clearance on each side of each bottom pad.
+  const w=(dim.w-(cols-1)*(partition+2*ft))/cols-2*ft-2*gap;
+  const d=(dim.d-(lines-1)*(partition+2*ft))/lines-2*ft-2*gap;
+  if(w>0&&d>0)rows.push({name:'Ячейка '+(i+1)+(cols*lines>1?' · сетка '+cols+'×'+lines:''),L:Math.round(d*10)/10,H:Math.round(w*10)/10,qty:cols*lines,th:t});
+ });
+ return rows;
+}
+function padFabric80(){const margin=Math.max(0,n(state.textileMargin,15)),ft=Math.max(0,n(state.fabricT,2));return padRows80().map(r=>{
+ // Face-cover with folded edges on reverse, not a double-face full wrap.
+ const fold=r.th+ft+margin,w=r.L+2*fold,h=r.H+2*fold;
+ return {name:'Картон '+fmt(r.th)+' мм · '+r.name,qty:r.qty,w,h,area:w*h*r.qty/1e6,note:'Обтяжка лицевой стороны и загиб на оборот; приклеить к дну'};
+})}
+const textileBefore80=textileDetails70;
+textileDetails70=function(){return [...textileBefore80(),...padFabric80()]};
+const simpleRenderBefore80=simpleRender;
+simpleRender=function(){
+ simpleRenderBefore80();
+ const t=$('padThickness'),g=$('padGap'),e=$('padEnabled');if(!t)return;
+ if(document.activeElement!==t)t.value=state.padThickness??2;
+ if(document.activeElement!==g)g.value=state.padGap??1;
+ if(document.activeElement!==e)e.value=state.padEnabled??'yes';
+ const rs=padRows80();
+ $('simpleCardboard').innerHTML=rs.length?'<h3>Переплётный картон '+fmt(n(state.padThickness,2))+' мм</h3>'+simpleTable(['Плашка','Длина, мм','Ширина, мм','Шт.'],rs.map(r=>[r.name,fmt(r.L),fmt(r.H),r.qty])):'<p class="muted">Плашки отключены или для них недостаточно места.</p>';
+};
+const reportBefore80=showSimpleReport;
+showSimpleReport=function(type){
+ if(type!=='cardboard')return reportBefore80(type);
+ readInputs();const rs=padRows80();
+ let overlay=$('reportOverlay');if(!overlay){overlay=document.createElement('div');overlay.id='reportOverlay';document.body.appendChild(overlay)}
+ overlay.innerHTML='<div class="reportTools"><button type="button" id="reportBack">← Вернуться</button><button type="button" id="reportPrint" class="primary">Печать / сохранить PDF</button><span>На iPad: Печать → Поделиться → Сохранить в Файлы</span></div><div class="reportContent"><h1>Ведомость раскроя переплётного картона</h1><p>Заказ: '+esc(state.name||'Без названия')+'</p><p>Толщина: '+fmt(n(state.padThickness,2))+' мм · зазор: '+fmt(n(state.padGap,1))+' мм с каждой стороны</p>'+simpleTable(['Плашка','Длина, мм','Ширина, мм','Шт.'],rs.map(r=>[r.name,fmt(r.L),fmt(r.H),r.qty]))+'<p>Всего плашек: '+rs.reduce((a,r)=>a+r.qty,0)+'. Размеры предварительные. Проверить после обтяжки перегородок и перед раскроем.</p></div>';
+ overlay.style.display='block';$('reportBack').addEventListener('click',()=>overlay.style.display='none');$('reportPrint').addEventListener('click',()=>window.print());
+};
+const renderBefore80=render;render=function(){renderBefore80();simpleRender()};
+render();
+
+</script>
+</body></html>
